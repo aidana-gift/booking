@@ -1,0 +1,32 @@
+.lang{
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+}
+.btn{
+    width: 2px;
+    height: 2px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #78909c;
+}
+.rus{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Russia_with_border.svg') no-repeat center;
+    background-size: 30px;
+    border-radius: 0%;
+    border-width: 0%;
+}
+
+.kg{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Flag_of_Kyrgyzstan.svg/800px-Flag_of_Kyrgyzstan.svg.png') no-repeat center;
+    background-size: 30px;
+    border-radius: 0%;
+    border-width: 0%;
+}
+
+.en{
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg/1024px-Flag_of_Great_Britain_%281707%E2%80%931800%29.svg.png') no-repeat center;
+    background-size: 30px;
+    border-radius: 0%;
+    border-width: 0%;
+}

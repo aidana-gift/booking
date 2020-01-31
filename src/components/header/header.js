@@ -22,6 +22,9 @@ const Header = () => {
             <a href="#">Услуги</a>
           </li>
           <li>
+            <a href="#">Бронирование</a>
+          </li>
+          <li>
             <a href="#">Контакты</a>
           </li>
         </ul>

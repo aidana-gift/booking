@@ -4,19 +4,11 @@ import './language.css'
 const Language = () => {
     return (
         <div className="lang">
-            <ul class="d-flex">
-                <li>
-                    <button type="button" className="kg btn"></button>
-                </li>
-
-                <li>
+            <div class="d-flex">
+                    <button type="button" className="kg btn border-0"></button>
                     <button type="button"  className="rus btn"></button>
-                </li>
-
-                <li>
                     <button type="button"  className="en btn"></button>
-                </li>
-            </ul>
+            </div>
         </div>
     )
 }

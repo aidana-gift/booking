@@ -6,10 +6,12 @@
 .btn{
     width: 2px;
     height: 2px;
-    padding: 10px;
+    margin: 10px;
     border-style: solid;
     border-color: #78909c;
 }
+/* button:focus {outline: none !important;}
+button::-moz-focus-inner {border: 0px !important;} */
 .rus{
     background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Russia_with_border.svg') no-repeat center;
     background-size: 30px;

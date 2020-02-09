@@ -3,6 +3,7 @@
     right: 0;
     padding-right: 20px;
 }
+
 .btn{
     width: 2px;
     height: 2px;
@@ -10,8 +11,9 @@
     border-style: solid;
     border-color: #78909c;
 }
-/* button:focus {outline: none !important;}
+/*button {outline: none !important;}
 button::-moz-focus-inner {border: 0px !important;} */
+/*a, a:hover, a:focus, a:active, button, button:focus, button:active { outline: none !important}*/
 .rus{
     background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Flag_of_Russia_with_border.svg') no-repeat center;
     background-size: 30px;

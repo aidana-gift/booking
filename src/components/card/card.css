@@ -1,0 +1,23 @@
+.card-item{
+    margin: 50px;
+    width: 300px;
+    height: 200px;
+}
+.card-btn{
+    background: transparent;
+    border-color: #01579b;
+    color: #0d47a1;
+}
+.card-btn:hover{
+    background-color: #01579b;
+    color: #fafafa;
+}
+.label{
+    text-align: center;
+    margin-top: 40px;
+}
+@media all (min-width: 830px){
+    .label{
+        margin-top: 5px !important;
+    }
+}

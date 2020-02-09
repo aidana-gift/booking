@@ -5,7 +5,7 @@ const Language = () => {
     return (
         <div className="lang">
             <div class="d-flex">
-                    <button type="button" className="kg btn border-0"></button>
+                    <button type="button" className="kg btn "></button>
                     <button type="button"  className="rus btn"></button>
                     <button type="button"  className="en btn"></button>
             </div>

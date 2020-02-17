@@ -24,7 +24,7 @@ const CardItem = (props) => {
                     <CardTitle>Двухместный номер с кроватью King size</CardTitle>
                         <CardSubtitle></CardSubtitle>
                     <CardText>2500 сом/ночь</CardText>
-                    <Button className="card-btn"><Link to='/room'>Забронировать</Link></Button>
+                    <Link to='/room'><Button className="card-btn">Забронировать</Button></Link>
                 </CardBody>
             </Card>
         </div>
@@ -35,7 +35,7 @@ const CardItem = (props) => {
           <CardTitle>Одноместный номер</CardTitle>
           <CardSubtitle></CardSubtitle>
           <CardText>2500 сом/ночь</CardText>
-          <Button className="card-btn">Забронировать</Button>
+          <Link to='/room'><Button className="card-btn">Забронировать</Button></Link>
         </CardBody>
       </Card>
         </div>
@@ -46,7 +46,7 @@ const CardItem = (props) => {
           <CardTitle>Двухместный номер с 2 кроватями</CardTitle>
           <CardSubtitle></CardSubtitle>
           <CardText>2500 сом/ночь</CardText>
-          <Button className="card-btn">Забронировать</Button>
+          <Link to='/room'><Button className="card-btn">Забронировать</Button></Link>
         </CardBody>
       </Card>
         </div>

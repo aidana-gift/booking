@@ -47,11 +47,6 @@ const Header = (props) => {
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/services"}>Услуги</Link>
-              </NavLink>
-            </NavItem>
-            <NavItem className="item">
-              <NavLink tag={"p"} className={"mb-0"}>
                 <Link to={"/booking"}>Бронирование</Link>
               </NavLink>
             </NavItem>

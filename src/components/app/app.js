@@ -10,7 +10,7 @@ import './app.css';
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="body">
         <Header />
           <div>
             <Switch>

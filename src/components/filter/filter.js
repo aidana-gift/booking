@@ -6,15 +6,17 @@ require('react-datepicker/dist/react-datepicker.css');
 
 
 const Filter = () => {
-    const [startDate, setStartDate] = useState(new Date("2014/02/08"));
-    const [endDate, setEndDate] = useState(new Date("2014/02/10"));
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
     return (
       <div className="row filter">
         <div>
         <DatePicker
+          placeholderText="Въезд"
           selected={startDate}
           onChange={date => setStartDate(date)}
           selectsStart
+          minDate={new Date()}
           startDate={startDate}
           endDate={endDate}
           className="filter-item"
@@ -23,6 +25,7 @@ const Filter = () => {
        
        <div>
        <DatePicker
+          placeholderText="Выезд"
           selected={endDate}
           onChange={date => setEndDate(date)}
           selectsEnd
@@ -34,11 +37,11 @@ const Filter = () => {
        </div>
       
       <div className="filter-item">
-        <input type="number" name="minSize" id="size" className="size-input filter-item" placeholder="взрослые"/>
+        <input type="number" name="minSize" min="1" id="size" className="size-input filter-item" placeholder="взрослые"/>
       </div>
         
       <div className="filter-item">
-        <input type="number" name="minSize" id="size" className="size-input filter-item" placeholder="дети"/>
+        <input type="number" name="minSize" min="0" id="size" className="size-input filter-item" placeholder="дети"/>
       </div>
         
       <div className="filter-item">

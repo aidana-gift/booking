@@ -1,0 +1,28 @@
+.filter{
+    margin-top: 24px;
+    margin-right: 0px;
+    margin-bottom: 16px;
+    margin-left: 0px;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #e3f2fd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+}
+.search-btn{
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+.search-label{
+    padding: 0;
+    text-align: center;
+}
+.filter-item{
+    margin-left: 3px;
+    border-radius: 4px;
+    height: 40px;
+}
+

@@ -6,22 +6,22 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-import './slider.css';
+import './room-slider.css';
 
 const items = [
   {
-    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/136/136921258.jpg",
+    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg",
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: "https://carouselhotel.com/assets/img/condos.jpg",
+    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg",
     altText: 'Slide 2',
     caption: 'Slide 2'
   }
 ];
 
-const Slider = () => {
+const RoomSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -45,7 +45,7 @@ const Slider = () => {
   const slides = items.map((item) => {
     return (
       <CarouselItem
-        className="custom-tag"
+        className="custom-tag-img"
         tag="div"
         key={item.src}
         onExiting={() => setAnimating(true)}
@@ -58,7 +58,7 @@ const Slider = () => {
   });
 
   return (
-    <div>
+    <div> 
       <Carousel
         activeIndex={activeIndex}
         previous={previous}
@@ -73,4 +73,4 @@ const Slider = () => {
   );
 }
 
-export default Slider;
+export default RoomSlider;

@@ -2,18 +2,9 @@
   font-weight: 600;
   color: #0d47a1
 }
-/* @media (min-width: 838px)
-.header {
-    flex-flow: row nowrap;
-    flex-pack: start;
-    justify-content: flex-start;
-}
-@media (min-width: 838px)
-.d-md-block {
-    display: block!important;
-} */
 .header{
   background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .header .mr-auto {
@@ -29,8 +20,6 @@
   width: 2px;
   height: 2px;
   margin: 10px;
-  border-style: solid;
-  border-color: #78909c;
 }
 
 .rus{

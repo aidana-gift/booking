@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import {Link} from 'react-router-dom';
 import './header.css'
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -10,7 +11,11 @@ const Header = (props) => {
   return (
     <div>
       <Navbar className="header" light expand="md">
-        <NavbarBrand href="/" className="mr-auto"><h3>Отель Таш-Кумыр</h3></NavbarBrand>
+        <NavbarBrand className="mr-auto">
+          <Link to="/"> 
+              <h3>Отель Таш-Кумыр</h3> 
+          </Link>
+        </NavbarBrand>
 
         <div className={"d-block d-md-none"}>
         <Button className="kg btn"
@@ -32,32 +37,27 @@ const Header = (props) => {
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                {/* <Link to={"/about"}>{t("aboutProject")}</Link> */}
-                <a href="#">Главная</a>
+                <Link to="main">Главная</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                {/* <Link to={"/about"}>{t("aboutProject")}</Link> */}
-                <a href="#">О нас</a>
+                <Link to="/about">О нас</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                {/* <Link to={"/about"}>{t("aboutProject")}</Link> */}
-                <a href="#">Услуги</a>
+                <Link to={"/services"}>Услуги</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                {/* <Link to={"/about"}>{t("aboutProject")}</Link> */}
-                <a href="#">Бронирование</a>
+                <Link to={"/booking"}>Бронирование</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                {/* <Link to={"/about"}>{t("aboutProject")}</Link> */}
-                <a href="#">Контакты</a>
+                <Link to={"/contacts"}>Контакты</Link>
               </NavLink>
             </NavItem>
           </Nav>

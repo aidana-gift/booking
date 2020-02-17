@@ -8,21 +8,49 @@ import {
   CardSubtitle,
   Button
 } from 'reactstrap';
+import {Link} from 'react-router-dom';
 import './card.css';
+
 
 const CardItem = (props) => {
   return (
-    <div>
+    <div className="cards" className="container">
         <h3 className="label" >Наши номера</h3>
-      <Card className="card-item">
+    <div className="row">
+        <div className="col-md">
+            <Card className="card-item">
+                <CardImg src="https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg" alt="Card image cap" />
+                <CardBody>
+                    <CardTitle>Двухместный номер с кроватью King size</CardTitle>
+                        <CardSubtitle></CardSubtitle>
+                    <CardText>2500 сом/ночь</CardText>
+                    <Button className="card-btn"><Link to='/room'>Забронировать</Link></Button>
+                </CardBody>
+            </Card>
+        </div>
+        <div className="col-md">
+        <Card className="card-item">
         <CardImg src="https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg" alt="Card image cap" />
         <CardBody>
-          <CardTitle>Номер с кроватью King size</CardTitle>
+          <CardTitle>Одноместный номер</CardTitle>
           <CardSubtitle></CardSubtitle>
           <CardText>2500 сом/ночь</CardText>
           <Button className="card-btn">Забронировать</Button>
         </CardBody>
       </Card>
+        </div>
+        <div className="col-md">
+        <Card className="card-item">
+        <CardImg src="https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg" alt="Card image cap" />
+        <CardBody>
+          <CardTitle>Двухместный номер с 2 кроватями</CardTitle>
+          <CardSubtitle></CardSubtitle>
+          <CardText>2500 сом/ночь</CardText>
+          <Button className="card-btn">Забронировать</Button>
+        </CardBody>
+      </Card>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,25 @@
+/* .custom-tag {
+    width:600px;
+    margin: 20px;
+} */
+ .custom-tag-img{
+     width: 600px;
+    height: 400px;
+}
+@media (max-width: 900px) {
+    .carousel {
+      width:auto;
+      height:auto;
+    }
+}
+/* .custom-tag{
+    width: 30em;
+    height: 30em;
+    align-content: center;
+}  */
+
+/* .custom-tag > img { 
+    width: 50%; 
+}
+*/
+

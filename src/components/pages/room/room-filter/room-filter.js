@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import {  Button } from 'reactstrap';
-import './filter.css';
+import '../../../filter/filter.css';
 require('react-datepicker/dist/react-datepicker.css');
 
 
@@ -46,7 +46,7 @@ const Filter = () => {
         
       <div className="filter-item">
         <Button outline color="info" className="search-btn filter-item">
-            <span className="search-btn">Поиск</span>
+            <span className="search-btn">Забронировать</span>
           </Button>
       </div>
        

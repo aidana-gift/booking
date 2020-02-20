@@ -9,8 +9,8 @@ const Header = (props) => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div>
-      <Navbar className="header" light expand="md">
+    <div className="header" >
+      <Navbar light expand="md">
         <NavbarBrand className="mr-auto">
           <Link to="/"> 
               <h3>Отель Таш-Кумыр</h3> 

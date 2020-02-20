@@ -58,7 +58,7 @@ const RoomSlider = () => {
   });
 
   return (
-    <div> 
+    <div className="container room-slider"> 
       <Carousel
         activeIndex={activeIndex}
         previous={previous}

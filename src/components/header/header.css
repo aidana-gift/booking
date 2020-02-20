@@ -1,10 +1,10 @@
 .navbar-expand-md .item a{
-  font-weight: 600;
+  font-weight: 400;
   color: #0d47a1
 }
 .header{
   background-color: #fafafa;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 0px 100px #fafafa;
 }
 
 .header .mr-auto {
@@ -42,8 +42,3 @@
   border-radius: 0%;
   border-width: 0%;
 }
-
-/* @media (min-width: 768px)
-.navbar-expand-md .navbar-toggler {
-    display: none;
-} */

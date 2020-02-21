@@ -11,9 +11,9 @@ const Header = (props) => {
   return (
     <div className="header" >
       <Navbar light expand="md">
-        <NavbarBrand className="mr-auto">
+        <NavbarBrand className="mr-auto" className='span'>
           <Link to="/"> 
-              <h3>Отель Таш-Кумыр</h3> 
+              <h3 className="hotel-name">Отель Таш-Кумыр</h3> 
           </Link>
         </NavbarBrand>
 

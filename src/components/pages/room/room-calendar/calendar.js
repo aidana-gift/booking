@@ -6,8 +6,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import './calendar.css';
 
 
-var classNames = require('classnames/dedupe');
-
 const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
   const highlightWithRanges = [

@@ -10,12 +10,12 @@ import './room-slider.css';
 
 const items = [
   {
-    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg",
+    src: "https://lh3.googleusercontent.com/proxy/_LvUyobNQ3EVQvQWGCCM4S8NHxYADV74Wi70JwK2ju8zCHcIIhaMzVHJb8SB4-5wsXPSU7yLzxb7-Igkv-Q-IziDe2GQV0ex7B6s3ym7EDf4hnU",
     altText: 'Slide 1',
     caption: 'Slide 1'
   },
   {
-    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg",
+    src: "https://www.bohle.com/media/image/87/f3/ec/BO_5215089-91_PF1_C_zoom6lL5xQ75jUz4C_600x600.jpg",
     altText: 'Slide 2',
     caption: 'Slide 2'
   }

@@ -1,5 +1,5 @@
  .custom-tag-img{
-     width: 600px;
+    width: 600px;
     height: 400px;
 }
 @media (max-width: 900px) {
@@ -11,6 +11,9 @@
 .room-slider{
     margin-bottom: 30px;
     margin-top: 30px;
+    width: 600px;
+    height: 400px;
+    padding: 0;
 }
 
 

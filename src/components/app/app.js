@@ -4,6 +4,7 @@ import Main from '../pages/main/main';
 import About from '../pages/about/about';
 import Contacts from '../pages/contacts/contacts';
 import Room from '../pages/room/room';
+import Booking from '../pages/booking/booking';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './app.css';
 
@@ -18,6 +19,7 @@ const App = () => {
             <Route path='/about' component={About} />
             <Route path='/contacts' component={Contacts} />
             <Route path='/room' component={Room} />
+            <Route path='/booking' component={Booking} />
             <Redirect to='/' />
           </Switch>
         </div>

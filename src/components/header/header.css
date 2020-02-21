@@ -4,11 +4,11 @@
 }
 .header{
   background-color: #fafafa;
-  box-shadow: 0 0px 100px #fafafa;
+  box-shadow: 0px 2px 18px rgb(179, 175, 175);
 }
 
 .header .mr-auto {
-  color: #01579b;
+  color: #0d47a1;
   margin-left: 15px;
 }
 

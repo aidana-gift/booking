@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import './user-form.css';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const FormUser = (props) => {
@@ -9,25 +10,34 @@ const FormUser = (props) => {
         <Form>
             <Label className="form-header">Данные гостя</Label>
             <FormGroup>
-                <Label for="examplePassword">Имя</Label>
+                <Label for="examplePassword">Имя
+                    <span className="required">*</span>
+                </Label>
                 <Input type="password" name="name" id="exampleName" placeholder="Имя" />
             </FormGroup>
 
             <FormGroup>
-                <Label for="examplePassword">Фамилия</Label>
+                <Label for="examplePassword">Фамилия
+                    <span className="required">*</span>
+                </Label>
                 <Input type="password" name="name" id="exampleName" placeholder="Фамилия" />
             </FormGroup>
 
             <FormGroup>
-                <Label for="examplePassword">Номер телефона</Label>
+                <Label for="examplePassword" >Номер телефона
+                    <span className="required">*</span>
+                </Label>
                 <PhoneInput
                     placeholder="Номер телефона"
                     value={value}
-                    onChange={setValue} />
+                    onChange={setValue}
+                         />
             </FormGroup>
 
             <FormGroup>
-                <Label for="exampleEmail">Email</Label>
+                <Label for="exampleEmail">Email
+                    <span className="required">*</span>
+                </Label>
                 <Input type="email" name="email" id="exampleEmail" placeholder="email" />
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>

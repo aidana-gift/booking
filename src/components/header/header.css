@@ -5,9 +5,12 @@
 .header{
   background-color: #fafafa;
   box-shadow: 0px 2px 18px rgb(179, 175, 175);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.header .mr-auto {
+.mr-auto {
   color: #0d47a1;
   margin-left: 15px;
 }

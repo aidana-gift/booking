@@ -20,9 +20,10 @@
 .room-info{
     padding: 10px;
 }
-.label{
+.cal-label{
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
     margin-top: 10px;
+    text-align: center;
 }

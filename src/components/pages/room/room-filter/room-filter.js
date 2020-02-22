@@ -47,8 +47,8 @@ const Filter = () => {
         
       <div className="filter-item">
       <Link to='/booking'>
-          <Button outline color="info" className="search-btn filter-item">
-            <span className="search-btn">Забронировать</span>
+          <Button outline color="info" className="search-btn">
+            <span>Забронировать</span>
           </Button>
         </Link>   
       </div>

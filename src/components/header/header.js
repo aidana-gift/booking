@@ -47,7 +47,7 @@ const Header = (props) => {
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/booking"}>Бронирование</Link>
+                <Link to={"/results"}>Бронирование</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">

@@ -16,7 +16,7 @@ const Room = () => {
                 <div className="col-12 room-post-heading">{postHeading}</div>
                 <div className="col-6"><RoomSlider /></div>
                 <div className="col-6"><Info /></div>
-                <div className="col-12 label">{calendarLabel}</div>
+                <div className="col-12 cal-label">{calendarLabel}</div>
                 <div className="col-12 room-calendar"><Calendar /></div>
                 <div className="col-12"><Filter /></div>
                 

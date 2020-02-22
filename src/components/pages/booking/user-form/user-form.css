@@ -1,0 +1,15 @@
+.form-header{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.PhoneInputInput{
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    height: calc(1.5em + .75rem + 2px);
+}
+.required {
+    color: red;
+    font-weight: 700;
+    font-size: inherit;
+}

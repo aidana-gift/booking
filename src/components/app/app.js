@@ -5,13 +5,14 @@ import About from '../pages/about/about';
 import Contacts from '../pages/contacts/contacts';
 import Room from '../pages/room/room';
 import Booking from '../pages/booking/booking';
+import Results from '../pages/results/results'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './app.css';
 
 const App = () => {
   return (
     <Router>
-      <div className="body">
+      <div className="app">
         <Header />
         <div>
           <Switch>
@@ -20,6 +21,7 @@ const App = () => {
             <Route path='/contacts' component={Contacts} />
             <Route path='/room' component={Room} />
             <Route path='/booking' component={Booking} />
+            <Route path='/results' component={Results} />
             <Redirect to='/' />
           </Switch>
         </div>

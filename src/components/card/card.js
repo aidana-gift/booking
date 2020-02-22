@@ -15,7 +15,6 @@ import './card.css';
 const CardItem = (props) => {
   return (
     <div className="cards" className="container">
-        <h3 className="label" >Наши номера</h3>
     <div className="row">
         <div className="col-md">
             <Card className="card-item">

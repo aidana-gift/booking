@@ -1,0 +1,13 @@
+.img-about{
+    width: 600px;
+    padding-right: 50px;
+}
+.about-label{
+    margin: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.div-img{
+    box-shadow: 14px 13px 28px 3px #b3aab3;
+}

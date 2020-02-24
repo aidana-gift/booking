@@ -1,6 +1,6 @@
 .img-about{
     width: 600px;
-    padding-right: 50px;
+    
 }
 .about-label{
     margin: 20px;
@@ -10,4 +10,5 @@
 }
 .div-img{
     box-shadow: 14px 13px 28px 3px #b3aab3;
+    position: relative;
 }

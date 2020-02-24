@@ -1,4 +1,16 @@
-.user-form{
+.feedback{
     padding: 50px;
-    width: 50%;
+}
+.contacts .info{
+    padding: 50px;
+
+}
+.contacts .label{
+    padding: 20px;
+}
+.contacts .contact-header{
+    margin: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
 }

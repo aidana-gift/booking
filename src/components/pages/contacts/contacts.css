@@ -3,7 +3,7 @@
 }
 .contacts .info{
     padding: 50px;
-
+    position: relative;
 }
 .contacts .label{
     padding: 20px;
@@ -13,4 +13,21 @@
     text-align: center;
     font-size: 24px;
     font-weight: 600;
+}
+.img-icons-inst{
+    width: 30px;
+    height: 30px;
+    background: url('https://pngicon.ru/file/uploads/instagram.png');
+    background-size: 28px;
+    margin: 10px;
+}
+.img-icons-fb{
+    width: 30px;
+    height: 30px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Facebook_F_icon.svg/1200px-Facebook_F_icon.svg.png');
+    background-size: 28px;
+}
+.contact-map{
+    margin-left: auto;
+    margin-right: auto;
 }

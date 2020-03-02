@@ -55,6 +55,11 @@ const Header = (props) => {
                 <Link to={"/contacts"}>Контакты</Link>
               </NavLink>
             </NavItem>
+            <NavItem className="item">
+              <NavLink tag={"p"} className={"mb-0"}>
+                <Link to={"/admin"}>Админ</Link>
+              </NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
         

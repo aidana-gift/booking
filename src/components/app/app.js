@@ -8,6 +8,7 @@ import Booking from '../pages/booking/booking';
 import Results from '../pages/results/results';
 import Admin from '../pages/admin/admin';
 import Edit from '../pages/admin/edit/edit';
+import Footer from '../footer/footer';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './app.css';
 
@@ -29,6 +30,7 @@ const App = () => {
             <Redirect to='/' />
           </Switch>
         </div>
+        <Footer />
       </div>
     </Router>
   );

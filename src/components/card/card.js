@@ -20,7 +20,7 @@ const CardItem = (props) => {
             <Card className="card-item">
                 <CardImg src="https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg" alt="Card image cap" />
                 <CardBody>
-                    <CardTitle>Двухместный номер с кроватью King size</CardTitle>
+                    <CardTitle>Двухместный номер</CardTitle>
                         <CardSubtitle></CardSubtitle>
                     <CardText>2500 сом/ночь</CardText>
                     <Link to='/room'><Button className="card-btn">Забронировать</Button></Link>

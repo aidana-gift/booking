@@ -1,0 +1,15 @@
+.footer{
+    display: block;
+    background-color: #37474f;
+    color: honeydew;
+    margin-top: 4em;
+}
+
+.footer-info{
+    text-align: center;
+    padding: 4em;
+}
+
+.footer-text-item{
+    margin: 1em;
+}

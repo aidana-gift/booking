@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import { Button} from 'reactstrap';
 import './admin.css';
 
 const Admin = () => {
@@ -28,8 +29,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td> <Link to="/edit"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Link>
-              <Link><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Link>
+          <td> <Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link>
                 </td>
         </tr>
         <tr>
@@ -40,8 +41,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td><Link to="/edit"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Link>
-              <Link><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Link></td>
+          <td><Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
         </tr>
         <tr>
         <th scope="row">3</th>
@@ -51,8 +52,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td><Link to="/edit"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Link>
-              <Link><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Link></td>
+          <td><Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
         </tr>
       </tbody>
     </Table>

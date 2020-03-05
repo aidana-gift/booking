@@ -22,3 +22,12 @@
     margin-left: 3px;
     margin-right: 3px;
 }
+.btn-secondary {
+    background-color: white !important;
+    border-color: white !important;
+}
+.btn-secondary:active{
+    background-color: white !important;
+    border-color: white !important;
+    outline: none !important;
+}

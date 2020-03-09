@@ -6,6 +6,18 @@ import './admin.css';
 
 const Admin = () => {
   return (
+    // deleteItem = (id) => {
+    //     this.setState (({items}) => {
+    //             const idx = items.findIndex((el) => el.id === id);
+                
+    //             const before = items.slice(0, idx);
+    //             const after = items.slice(idx + 1);
+    //             const newArray = [...before, ...after];
+    //             return {
+    //                 items: newArray
+    //             }
+    //         })
+    //     };
       <div className="container admin">
     <Table>
       <thead>
@@ -29,8 +41,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td> <Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link>
+          <td> <Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link>
                 </td>
         </tr>
         <tr>
@@ -41,8 +53,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td><Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
+          <td><Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
         </tr>
         <tr>
         <th scope="row">3</th>
@@ -52,8 +64,8 @@ const Admin = () => {
           <td>Оплачено</td>
           <td>0556342256</td>
           <td>11</td>
-          <td><Link to="/edit"><Button className="btn-secondary"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-secondary"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
+          <td><Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
         </tr>
       </tbody>
     </Table>

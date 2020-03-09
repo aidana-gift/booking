@@ -22,11 +22,11 @@
     margin-left: 3px;
     margin-right: 3px;
 }
-.btn-secondary {
+.btn-new-style {
     background-color: white !important;
     border-color: white !important;
 }
-.btn-secondary:active{
+.btn-new-style:active{
     background-color: white !important;
     border-color: white !important;
     outline: none !important;

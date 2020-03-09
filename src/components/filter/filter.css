@@ -27,3 +27,8 @@
     height: 50px;
 }
 
+@media (max-width: 900px){
+  .filter {
+    display: block;
+}
+}

@@ -8,10 +8,13 @@ import './calendar.css';
 
 const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const markedData = ['2020-03-20','2017-11-16']
+  // markedDates= {{
+  //   [this.state.markedData]: {selected: true, marked: true},
+  //   }}
   const highlightWithRanges = [
     {
       "react-datepicker__day--highlighted-custom-1": [
-        subDays(new Date(), 5),
         subDays(new Date(), 6),
         subDays(new Date(), 7),
         subDays(new Date(), 8)
@@ -33,6 +36,7 @@ const Calendar = () => {
         onChange={date => setStartDate(date)}
         highlightDates={highlightWithRanges}
         inline
+        dateFormat="yyyy-mm-dd"
       />
     </div>
   );

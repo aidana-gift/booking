@@ -40,11 +40,7 @@ const Filter = () => {
       <div className="filter-item">
         <input type="number" name="minSize" min="1" id="size" className="size-input filter-item" placeholder="взрослые"/>
       </div>
-        
-      <div className="filter-item">
-        <input type="number" name="minSize" min="0" id="size" className="size-input filter-item" placeholder="дети"/>
-      </div>
-        
+ 
       <div className="filter-item">
       <Link to='/booking'>
           <Button outline color="info" className="search-btn">

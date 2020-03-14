@@ -10,7 +10,7 @@ const Filter = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   return (
-    <div>
+    <div className="container">
       <div className="filter row">
         <div>
           <DatePicker
@@ -40,10 +40,6 @@ const Filter = () => {
 
         <div className="filter-item">
           <input type="number" name="minSize" min="1" id="size" className="size-input filter-item" placeholder="взрослые" />
-        </div>
-
-        <div className="filter-item">
-          <input type="number" name="minSize" min="0" id="size" className="size-input filter-item" placeholder="дети" />
         </div>
 
         <div>

@@ -29,6 +29,6 @@
 
 @media (max-width: 900px){
   .filter {
-    display: block;
-}
+    display: block; 
+    }
 }

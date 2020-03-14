@@ -1,14 +1,16 @@
 .img-about{
-    width: 600px;
-    
+    width: 500px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 3em;
+    /* box-shadow: 0px 2px 10px rgb(179, 175, 175); */
 }
+
 .about-label{
     margin: 20px;
     text-align: center;
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 3em;
 }
-.div-img{
-    box-shadow: 14px 13px 28px 3px #b3aab3;
-    position: relative;
-}
+

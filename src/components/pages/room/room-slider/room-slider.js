@@ -10,7 +10,7 @@ import './room-slider.css';
 
 const items = [
   {
-    src: "https://lh3.googleusercontent.com/proxy/_LvUyobNQ3EVQvQWGCCM4S8NHxYADV74Wi70JwK2ju8zCHcIIhaMzVHJb8SB4-5wsXPSU7yLzxb7-Igkv-Q-IziDe2GQV0ex7B6s3ym7EDf4hnU",
+    src: "https://www.royalgardenparis.com/media/cache/jadro_resize/rc/qqcSVvLi1583314126/jadroRoot/medias/5679581114f10/hotel-royal-garden-champs-elysees-paris-10.jpg",
     altText: 'Slide 1',
     caption: 'Slide 1'
   },

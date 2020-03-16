@@ -8,25 +8,19 @@ import './calendar.css';
 
 const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const markedData = ['2020-03-20','2017-11-16']
-  // markedDates= {{
-  //   [this.state.markedData]: {selected: true, marked: true},
-  //   }}
+  const busyData = ['2020-03-25','2020-03-27'];
+  const bookedData = ['2020-03-19','2020-03-20'];
+  const busyDataMapped = busyData.map(item => new Date(item));
+  const bookedDataMapped = bookedData.map(item => new Date(item));
+
   const highlightWithRanges = [
     {
-      "react-datepicker__day--highlighted-custom-1": [
-        subDays(new Date(), 6),
-        subDays(new Date(), 7),
-        subDays(new Date(), 8)
-      ]
+      "react-datepicker__day--highlighted-custom-1": 
+      busyDataMapped
     },
     {
-      "react-datepicker__day--highlighted-custom-2": [
-        addDays(new Date(), 1),
-        addDays(new Date(), 2),
-        addDays(new Date(), 3),
-        addDays(new Date(), 4)
-      ]
+      "react-datepicker__day--highlighted-custom-2": 
+      bookedDataMapped
     }
   ];
   return (

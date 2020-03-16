@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import './app.css';
 
 const App = () => {
+
+  console.log(Header);
   return (
     <Router>
       <div className="app">
@@ -20,13 +22,13 @@ const App = () => {
         <div>
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route path='/about' component={About} />
-            <Route path='/contacts' component={Contacts} />
-            <Route path='/room' component={Room} />
-            <Route path='/booking' component={Booking} />
-            <Route path='/results' component={Results} />
-            <Route path='/admin' component={Admin} />
-            <Route path='/edit' component={Edit} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/contacts' component={Contacts} />
+            <Route exact path='/room' component={Room} />
+            <Route exact path='/booking' component={Booking} />
+            <Route exact path='/results' component={Results} />
+            <Route exact path='/admin' component={Admin} />
+            <Route exact path='/edit' component={Edit} />
             <Redirect to='/' />
           </Switch>
         </div>

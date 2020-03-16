@@ -3,7 +3,6 @@ import { Table } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { Button} from 'reactstrap';
 import './admin.css';
-
 const Admin = () => {
   return (
     // deleteItem = (id) => {

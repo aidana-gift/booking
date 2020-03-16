@@ -11,15 +11,15 @@ const Header = (props) => {
   return (
     <div className="header" >
       <Navbar light expand="md">
-        <NavbarBrand className="mr-auto" className='span'>
-          <Link to="/"> 
+        <NavbarBrand tag={'div'} className  ="mr-auto span"  >
+          <Link to={"/"}> 
               <h3 className="hotel-name">Отель Таш-Кумыр</h3> 
           </Link>
         </NavbarBrand>
 
         <div className={"d-block d-md-none"}>
         <Button className="kg btn"
-            // color={"faded"}
+            // color={"faded"}1
             // className={`header-button shadow-none ${
             //   lang === "ru" ? "" : "text-muted"
             // }`}
@@ -37,12 +37,12 @@ const Header = (props) => {
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to="main">Главная</Link>
+                <Link to={"/main"}>Главная</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to="/about">О нас</Link>
+                <Link to={"/about"}>О нас</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">

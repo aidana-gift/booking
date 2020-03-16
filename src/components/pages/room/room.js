@@ -15,11 +15,11 @@ const Room = () => {
             <div className="row">
                 <div className="col-12 room-heading">{heading}</div>
                 <div className="col-12 room-post-heading">{postHeading}</div>
-                <div className="col-6"><RoomSlider /></div>
-                <div className="col-6"><Info /></div>
+                <div className="col-8"><RoomSlider /></div>
+                <div className="col-4"><Info /></div>
                 <div className="col-12 cal-label">{calendarLabel}</div>
-                <div className="col-12 cal-label"><Table /></div>
-                <div className="col-12 room-calendar"><Calendar /></div>
+                {/* <div className="col-12"><Table /></div> */}
+                <div className="col-10 room-calendar"><Calendar /></div>
                 <div className="col-12"><Filter /></div>
                 
             </div>

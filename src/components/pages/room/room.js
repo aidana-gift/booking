@@ -3,7 +3,7 @@ import Filter from './room-filter/room-filter';
 import RoomSlider from './room-slider/room-slider';
 import Calendar from './room-calendar/calendar';
 import Info from './room-info/room-info';
-import Table from './room-table/room-table';
+import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './room.css'
 import './room-slider/room-slider.css';
 const heading = "Одноместный номер"
@@ -13,6 +13,7 @@ const Room = () => {
     return (
         <div className="container">
             <div className="row">
+                <ScrollToTopControlller />
                 <div className="col-12 room-heading">{heading}</div>
                 <div className="col-12 room-post-heading">{postHeading}</div>
                 <div className="col-8"><RoomSlider /></div>

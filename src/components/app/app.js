@@ -29,7 +29,6 @@ const App = () => {
             <Route exact path='/results' component={Results} />
             <Route exact path='/admin' component={Admin} />
             <Route exact path='/edit' component={Edit} />
-            <Redirect to='/' />
           </Switch>
         </div>
         <Footer />

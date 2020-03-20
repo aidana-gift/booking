@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import PhoneInput from 'react-phone-number-input'
+import PhoneInput from 'react-phone-number-input';
+import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './contacts.css';
 
 const address = "г. Жалал-Абад ул.Ленина д.65";
@@ -12,6 +13,7 @@ const Contacts = () => {
         <div className="container">
             <div className="row contacts">
                 <div className="info col-6">
+                    <ScrollToTopControlller />
                     <div className="contact-header">Контактная информация</div>
                     <div className="label">Наш адрес:   {address}</div>
                     <div className="label">Телефон для связи:   {phone}</div>

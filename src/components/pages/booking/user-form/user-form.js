@@ -2,10 +2,23 @@ import React, { useState } from 'react';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import './user-form.css';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 const FormUser = (props) => {
-    const [value, setValue] = useState()
+    const [firstName, setFirstName] = useState()
+    const [lastName, setLastName] = useState()
+    const [number, setNumber] = useState()
+    const [email, setEmail] = useState()
+    const [time, setTime] = useState()
+    const [special, setSpecial] = useState()
+
+    function handleClick(){
+        if((firstName && lastName && number && email)){
+             alert("Спасибо за бронирование!");
+        }
+        else  return alert("Заполните обязательные поля");
+      }
+
     return (
         <Form>
             <Label className="form-header">Данные гостя</Label>
@@ -13,14 +26,31 @@ const FormUser = (props) => {
                 <Label for="examplePassword">Имя
                     <span className="required">*</span>
                 </Label>
-                <Input type="password" name="name" id="exampleName" placeholder="Имя" />
+
+                <Input 
+                    type="name" 
+                    name="name" 
+                    id="exampleName" 
+                    placeholder="Имя" 
+                    value={firstName}
+                    onChange={e => setFirstName(e.target.value)}
+                    required
+                />
             </FormGroup>
 
             <FormGroup>
                 <Label for="examplePassword">Фамилия
                     <span className="required">*</span>
                 </Label>
-                <Input type="password" name="name" id="exampleName" placeholder="Фамилия" />
+                <Input 
+                    type="name" 
+                    name="name" 
+                    id="exampleName" 
+                    placeholder="Фамилия"
+                    value={lastName}
+                    onChange={e => setLastName(e.target.value)} 
+                    required
+                />
             </FormGroup>
 
             <FormGroup>
@@ -29,8 +59,9 @@ const FormUser = (props) => {
                 </Label>
                 <PhoneInput
                     placeholder="Номер телефона"
-                    value={value}
-                    onChange={setValue}
+                    value={number}
+                    onChange={setNumber}
+                    required
                          />
             </FormGroup>
 
@@ -38,12 +69,27 @@ const FormUser = (props) => {
                 <Label for="exampleEmail">Email
                     <span className="required">*</span>
                 </Label>
-                <Input type="email" name="email" id="exampleEmail" placeholder="email" />
+                <Input 
+                    type="email" 
+                    name="email" 
+                    id="exampleEmail" 
+                    placeholder="email" 
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    required
+                    />
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>
             <FormGroup>
                 <Label for="exampleSelect">Примерное время прибытия</Label>
-                <Input type="select" name="select" id="exampleSelect" placeholder="Не знаю">
+                <Input 
+                    type="select" 
+                    name="select" 
+                    id="exampleSelect" 
+                    placeholder="Не знаю"
+                    value={time}
+                    onChange={e => setTime(e.target.value)}
+                >
                     <option>Не знаю</option>
                     <option>00:00</option>
                     <option>01:00</option>
@@ -74,10 +120,20 @@ const FormUser = (props) => {
 
             <FormGroup>
                 <Label for="exampleText">Special requests</Label>
-                <Input type="textarea" name="text" id="exampleText" />
+                <Input 
+                    type="textarea" 
+                    name="text" 
+                    id="exampleText"
+                    value={special}
+                    onChange={e => setSpecial(e.target.value)}
+                 />
             </FormGroup>
 
-            <Button>Submit</Button>
+            <Form>
+            <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
+              <span>Отправить</span>
+            </Button>
+            </Form>
         </Form>
     );
 }

@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Button, Form } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 import './filter.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-const Filter = () => {
+const Filter = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [adults, setAdults] = useState(" ");
+
+  function handleClick(){
+    if((startDate && endDate)){
+         props.history.push('/results')
+    }
+    else alert("Заполните поля дат");
+  }
+  
   return (
     <div className="container">
       <div className="filter row">
@@ -22,6 +31,7 @@ const Filter = () => {
             startDate={startDate}
             endDate={endDate}
             className="filter-item"
+            required
           />
         </div>
 
@@ -35,19 +45,32 @@ const Filter = () => {
             endDate={endDate}
             minDate={startDate}
             className="filter-item"
+            required
           />
         </div>
 
+        
+
         <div className="filter-item">
-          <input type="number" name="minSize" min="1" id="size" className="size-input filter-item" placeholder="взрослые" />
+          <input
+              type="number" 
+              name="minSize" 
+              min="1" 
+              id="size" 
+              className="size-input filter-item" 
+              placeholder="взрослые" 
+              value={adults}
+              onChange={e => setAdults(e.target.value)}
+              />
         </div>
+        
 
         <div>
-          <Link to='/results'>
-            <Button outline color="info" className="search-btn">
+            <Form>
+            <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
               <span>Поиск</span>
             </Button>
-          </Link>
+            </Form>
         </div>
 
       </div>
@@ -55,4 +78,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default withRouter(Filter);

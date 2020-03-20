@@ -1,11 +1,13 @@
 import React from 'react';
 import './about.css'
+import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 
 const aboutUs = "О нас";
 const About = () => {
     return (
         <div className="container">
             <div className="row">
+                <ScrollToTopControlller />
                 <div className="col-12 about-label">{aboutUs}</div>
                 <img className="col-6 img-about" src="https://industry.ehl.edu/hubfs/HI_Blog%20Header%20Pictures/Hotel-design.jpg" alt="альтернативный текст" />
                 <div className="col-6">Отель Таш-Кумыр — это отель, предоставляющий комфортные и уютные номера со всеми удобствами для своих посетителей. Наш отель спроектирован в светлых, ярких, красочных тонах с различными, креативными иллюстрациями об истории, культуре, достижениях выдяющихся людей Кыргызстана, которые воодушевляют, подбадривают к новых начинаниям и просто поднимают настроение наших посетителей.</div>

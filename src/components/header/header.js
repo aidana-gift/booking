@@ -37,7 +37,7 @@ const Header = (props) => {
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/main"}>Главная</Link>
+                <Link to={"/"}>Главная</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">

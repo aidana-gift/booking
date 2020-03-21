@@ -56,7 +56,7 @@ const Contacts = () => {
                     </Form>
                 </div>
                 <div className="contact-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2871.054578741603!2d72.22184015910717!3d41.34622197568572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2fb3399e58191a76!2z0LPQvtGB0YLQuNC90LjRhtCwINCi0LDRiC3QmtGD0LzRi9GA!5e0!3m2!1sru!2skg!4v1582645987788!5m2!1sru!2skg" 
-                    width={1000} height={450} frameborder={0} 
+                    width={1000} height={450} frameBorder={0} 
                     border= {0}
                     ></iframe>
                 </div>

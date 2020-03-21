@@ -5,11 +5,12 @@ import Filter from '../../filter/filter';
 import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './main.css';
 
-const Main = () => {
+const Main = (props) => {
+
   return (
     <div>
-      <ScrollToTopControlller />
-      <Slider />
+      <ScrollToTopControlller/>
+      <Slider items={props.items}/>
       <div className="container">
         <Filter />
         <h3 className="card-label" >Наши номера</h3>

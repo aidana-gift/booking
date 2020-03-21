@@ -12,16 +12,28 @@ import Footer from '../footer/footer';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import './app.css';
 
-const App = () => {
+const App = (props) => {
+ 
+  const items = [
+    {
+      src: "https://q-cf.bstatic.com/images/hotel/max1024x768/136/136921258.jpg",
+      altText: 'Slide 1',
+      caption: 'Slide 1'
+    },
+    {
+      src: "https://carouselhotel.com/assets/img/condos.jpg",
+      altText: 'Slide 2',
+      caption: 'Slide 2'
+    }
+  ];
 
-  console.log(Header);
   return (
     <Router>
       <div className="app">
         <Header />
         <div>
           <Switch>
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={() => <Main items={items}/>}/>
             <Route exact path='/about' component={About} />
             <Route exact path='/contacts' component={Contacts} />
             <Route exact path='/room' component={Room} />

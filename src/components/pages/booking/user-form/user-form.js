@@ -3,7 +3,11 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import './user-form.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import * as axios from 'axios';
 
+// axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+//     console.log(response);
+// })
 const FormUser = (props) => {
     const [firstName, setFirstName] = useState()
     const [lastName, setLastName] = useState()

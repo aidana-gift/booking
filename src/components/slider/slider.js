@@ -7,32 +7,21 @@ import {
 } from 'reactstrap';
 import './slider.css';
 
-const items = [
-  {
-    src: "https://q-cf.bstatic.com/images/hotel/max1024x768/136/136921258.jpg",
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: "https://carouselhotel.com/assets/img/condos.jpg",
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  }
-];
 
-const Slider = () => {
+
+const Slider = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === props.items.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? props.items.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   }
 
@@ -41,7 +30,7 @@ const Slider = () => {
     setActiveIndex(newIndex);
   }
 
-  const slides = items.map((item) => {
+  const slides = props.items.map((item) => {
     return (
       <CarouselItem
         className="custom-tag"
@@ -63,7 +52,7 @@ const Slider = () => {
         previous={previous}
         next={next}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <CarouselIndicators items={props.items} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />

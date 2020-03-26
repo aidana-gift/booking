@@ -133,11 +133,10 @@ const FormUser = (props) => {
                  />
             </FormGroup>
 
-            <Form>
             <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
               <span>Отправить</span>
             </Button>
-            </Form>
+
         </Form>
     );
 }

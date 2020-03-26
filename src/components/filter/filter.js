@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import './filter.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
-
 const Filter = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -68,7 +67,7 @@ const Filter = (props) => {
         <div>
             <Form>
             <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
-              <span>Поиск</span>
+              <span>{"Поиск"}</span>
             </Button>
             </Form>
         </div>

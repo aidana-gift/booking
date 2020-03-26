@@ -42,8 +42,8 @@ const Admin = () => {
             <td>Оплачено</td>
             <td>0556342256</td>
             <td>11</td>
-            <td> <Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link>
+            <td> <Link to="/edit"><Button className="btn-new-style"><i className="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+                <Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button>
             </td>
           </tr>
           <tr>
@@ -54,8 +54,8 @@ const Admin = () => {
             <td>Оплачено</td>
             <td>0556342256</td>
             <td>11</td>
-            <td><Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
+            <td><Link to="/edit"><Button className="btn-new-style"><i className="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></td>
           </tr>
           <tr>
             <th scope="row">3</th>
@@ -65,8 +65,8 @@ const Admin = () => {
             <td>Оплачено</td>
             <td>0556342256</td>
             <td>11</td>
-            <td><Link to="/edit"><Button className="btn-new-style"><i class="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
-              <Link><Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></Link></td>
+            <td><Link to="/edit"><Button className="btn-new-style"><i className="fa fa-pencil-square-o btn btn-tbl-edit" aria-hidden="true"></i></Button></Link>
+              <Button className="btn-new-style"><i className="fa fa-trash-o btn btn-tbl-delete" aria-hidden="true"></i></Button></td>
           </tr>
         </tbody>
       </Table>

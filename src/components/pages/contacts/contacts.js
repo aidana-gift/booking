@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import PhoneInput from 'react-phone-number-input';
 import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './contacts.css';
 
@@ -27,8 +26,8 @@ const Contacts = () => {
                     <div className="contact-header">Напишите нам</div>
                     <Form>
                         <FormGroup>
-                            <Label for="examplePassword">Тема</Label>
-                            <Input type="password" name="name" id="exampleName" placeholder="Тема" />
+                            <Label for="examplePassword">Имя</Label>
+                            <Input type="password" name="name" id="exampleName" placeholder="Имя" />
                         </FormGroup>
 
                         <FormGroup>
@@ -39,12 +38,8 @@ const Contacts = () => {
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for="examplePassword" >Номер телефона</Label>
-                            <PhoneInput
-                                placeholder="Номер телефона"
-                                value={value}
-                                onChange={setValue}
-                            />
+                            <Label for="examplePassword">Тема</Label>
+                            <Input type="password" name="name" id="exampleName" placeholder="Тема" />
                         </FormGroup>
 
                         <FormGroup>

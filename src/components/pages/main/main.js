@@ -6,15 +6,15 @@ import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './main.css';
 
 const Main = (props) => {
-
   return (
+    
     <div>
       <ScrollToTopControlller/>
       <Slider items={props.items}/>
       <div className="container">
-        <Filter />
+        <Filter/>
         <h3 className="card-label" >Наши номера</h3>
-        <CardItem />
+        <CardItem cards={props.cards}/>
       </div>
 
     </div>

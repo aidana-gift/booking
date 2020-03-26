@@ -2,11 +2,21 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
 import {Link} from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './header.css'
+
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);
-
+  const { t, i18n} = useTranslation();
+  const [lang,setLang] = useState(localStorage.getItem('language'));
   const toggleNavbar = () => setCollapsed(!collapsed);
+
+  const handleChange = (language) => {
+    localStorage.setItem('language',language);
+    setLang(language);
+    window.location.reload(true);
+    i18n.changeLanguage(language);
+  };
 
   return (
     <div className="header" >
@@ -23,12 +33,19 @@ const Header = (props) => {
             // className={`header-button shadow-none ${
             //   lang === "ru" ? "" : "text-muted"
             // }`}
-            // onClick={() => handleChange("ru")}
+                onClick={() => handleChange("kg")}
           >
           </Button>
-          <Button className="rus btn">
+
+          <Button className="rus btn" 
+                  className = {`${
+              lang === "ru" ? "" : "text-muted"
+            }`}
+                  onClick={() => handleChange("ru") }>
           </Button>
-          <Button className="en btn">
+
+          <Button className="en btn"
+                  onClick={() => handleChange("en")}>
           </Button>
         </div>
 

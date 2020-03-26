@@ -27,7 +27,7 @@ const Contacts = () => {
                     <Form>
                         <FormGroup>
                             <Label for="examplePassword">Имя</Label>
-                            <Input type="password" name="name" id="exampleName" placeholder="Имя" />
+                            <Input type="name" name="name" id="exampleName" placeholder="Имя" />
                         </FormGroup>
 
                         <FormGroup>
@@ -39,7 +39,7 @@ const Contacts = () => {
 
                         <FormGroup>
                             <Label for="examplePassword">Тема</Label>
-                            <Input type="password" name="name" id="exampleName" placeholder="Тема" />
+                            <Input type="name" name="name" id="exampleName" placeholder="Тема" />
                         </FormGroup>
 
                         <FormGroup>

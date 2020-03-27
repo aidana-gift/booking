@@ -8,13 +8,14 @@ import './room.css'
 import '../room-slider/room-slider';
 
 const calendarLabel = "Проверьте наличие мест на Вашу дату";
-const Room1 = (props) => {
+const Room = (props) => {
+    debugger
     return (
         <div className="container">
             <div className="row">
                 <ScrollToTopControlller />
-                <div className="col-12 room-heading">{props.cards[0].title}</div>
-                <div className="col-12 room-post-heading">{props.cards[0].price}</div>
+                <div className="col-12 room-heading">{props.name}</div>
+                <div className="col-12 room-post-heading">{props.price}</div>
                 <div className="col-8"><RoomSlider /></div>
                 <div className="col-4"><Info /></div>
                 <div className="col-12 cal-label">{calendarLabel}</div>
@@ -26,4 +27,4 @@ const Room1 = (props) => {
     )
 }
 
-export default Room1;
+export default Room;

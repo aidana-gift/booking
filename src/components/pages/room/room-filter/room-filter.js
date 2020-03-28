@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import {  Button, Form } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
@@ -13,7 +13,12 @@ const Filter = (props) => {
 
     function handleClick(){
       if((startDate && endDate)){
-           props.history.push('/booking')
+           props.history.push({
+             pathname: '/booking',
+             state: {date_from: startDate,
+                     date_to: endDate,
+                     room: props.room
+                     }})
       }
       else return alert("Заполните поля дат");
     }

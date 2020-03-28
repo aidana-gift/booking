@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import './user-form.css';
@@ -9,19 +9,37 @@ import * as axios from 'axios';
 //     console.log(response);
 // })
 const FormUser = (props) => {
-    const [firstName, setFirstName] = useState()
-    const [lastName, setLastName] = useState()
-    const [number, setNumber] = useState()
-    const [email, setEmail] = useState()
-    const [time, setTime] = useState()
-    const [special, setSpecial] = useState()
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [number, setNumber] = useState("")
+    const [email, setEmail] = useState("")
+    //const [time, setTime] = useState()
+    const [special, setSpecial] = useState("")
 
     function handleClick(){
         if((firstName && lastName && number && email)){
              alert("Спасибо за бронирование!");
-        }
-        else  return alert("Заполните обязательные поля");
-      }
+                 axios.post('https://cors-anywhere.herokuapp.com/https://radiant-fjord-27627.herokuapp.com/bookings/', {
+                    "date_from": props.date_from,
+                    "date_to": props.date_to,
+                    "room": props.room,
+                    "clientName": firstName,
+                    "clientSurname": lastName,
+                    "clientEmail": email,
+                    "clientPhone": number,
+                    "comment": special
+             },
+             {
+                 "Content-Type": 'application/json'
+             })
+                    .then((response) => {
+                    console.log(response);
+                }, (error) => {
+                    console.log(error);
+                });
+                    }
+                    else  return alert("Заполните обязательные поля");
+                }
 
     return (
         <Form>
@@ -84,7 +102,7 @@ const FormUser = (props) => {
                     />
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="exampleSelect">Примерное время прибытия</Label>
                 <Input 
                     type="select" 
@@ -120,7 +138,7 @@ const FormUser = (props) => {
                     <option>22:00</option>
                     <option>23:00</option>
                 </Input>
-            </FormGroup>
+            </FormGroup> */}
 
             <FormGroup>
                 <Label for="exampleText">Special requests</Label>

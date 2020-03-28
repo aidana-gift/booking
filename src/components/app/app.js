@@ -31,17 +31,11 @@ const App = (props) => {
                   render={() => <About />} />
             <Route exact path='/contacts' 
                   render={() => <Contacts />} />
-            <Route exact path='/room' 
-                  render={() => <Room 
+            <Route exact path={'/room/:id'} 
+                  render={(props) => <Room {...props} key={props.location.key}
                                     />}/>
-            {/* <Route exact path='/room2' 
-                  render={() => <Room2 
-                                    cards={props.state.cards}/>}/>
-            <Route exact path='/room2bed' 
-                  render={() => <Room2bed 
-                                    cards={props.state.cards}/>}/> */}
             <Route exact path='/booking' 
-                  render={() => <Booking />}/>
+                  render={(props) => <Booking  {...props} />}/>
             <Route exact path='/results' 
                   render={() => <Results 
                         cards={props.state.cards} />} />

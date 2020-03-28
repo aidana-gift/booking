@@ -4,6 +4,7 @@ import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './contacts.css';
 import axios from 'axios';
 import { getData, postData} from '../../../request/request.js';
+import { Link } from 'react-router-dom';
 
 const address = "г. Жалал-Абад ул.Ленина д.65";
 const phone = "+996 770 591 000";
@@ -11,10 +12,10 @@ const phone = "+996 770 591 000";
 const Contacts = () => {
     const [value, setValue] = useState()
     const [mystate, setMystate] = useState([]);
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [subject, setSubject] = useState();
-    const [message, setMessage] = useState();
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
 
         function handleClick(){
         if((name && email && subject && message)){
@@ -61,7 +62,7 @@ const Contacts = () => {
                     <div className="label">Наш адрес:   {address}</div>
                     <div className="label">Телефон для связи:   {phone}</div>
                     <div className="label">Мы в соцсетях:
-                        <Button className="img-icons-inst"></Button>
+                        <Link to="https://www.instagram.com/kokartjalalabad1/"><Button className="img-icons-inst"></Button></Link>
                         <Button className="img-icons-fb"></Button>
                     </div>
                 </div>

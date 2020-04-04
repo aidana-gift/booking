@@ -1,0 +1,21 @@
+.reserv-aside{
+    width: 40%;
+    margin: 1em;
+    display: inline-block;
+}
+.top-info{
+    border-bottom: 2px solid #d8d8d8;
+}
+.final{
+    background-color: lavender;
+}
+.checks{
+    color: #6c757d;
+    font-size: 16px;
+}
+.reserv-date{
+    font-weight: bold;
+}
+.input{
+    box-shadow: 1px 1px 1px rgb(179, 175, 175);
+}

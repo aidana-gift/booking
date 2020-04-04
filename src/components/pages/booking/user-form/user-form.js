@@ -57,6 +57,7 @@ const FormUser = (props) => {
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)}
                     required
+                    className="input"
                 />
             </FormGroup>
 
@@ -72,6 +73,7 @@ const FormUser = (props) => {
                     value={lastName}
                     onChange={e => setLastName(e.target.value)} 
                     required
+                    className="input"
                 />
             </FormGroup>
 
@@ -84,6 +86,7 @@ const FormUser = (props) => {
                     value={number}
                     onChange={setNumber}
                     required
+                    className="input"
                          />
             </FormGroup>
 
@@ -99,6 +102,7 @@ const FormUser = (props) => {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
+                    className="input"
                     />
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>
@@ -148,6 +152,7 @@ const FormUser = (props) => {
                     id="exampleText"
                     value={special}
                     onChange={e => setSpecial(e.target.value)}
+                    className="input"
                  />
             </FormGroup>
 

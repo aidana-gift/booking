@@ -1,36 +1,59 @@
 import React from 'react';
 import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
+    Card,
+    CardImg,
+    CardText,
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    Button
 } from 'reactstrap';
 
-const Aside = () => {
-  return (
-      <div>
-          <Card className="card-item container">
-            <CardBody>
-                <div className="col-4">
-                    <span>Прибытие</span>
-                    <span>27 Марта 2020</span>
-                    <span>от 12:00</span>
-                </div>
+import './book-info.css';
 
-                <div className="col-4">
-                    <CardTitle>Прибытие</CardTitle>
-                    <CardSubtitle>27 Марта 2020</CardSubtitle>
-                    <CardText>от 12:00</CardText>
-                </div>
-              
-              
-            </CardBody>
-          </Card>
+const Aside = () => {
+    return (
+        <div>
+            <Card className="card-item">
+                <CardBody>
+                    <div className="top-info">
+                        <div className="reserv-aside">
+                            <CardTitle className="checks">Прибытие</CardTitle>
+                            <CardSubtitle className="reserv-date">27 Марта 2020</CardSubtitle>
+                            <CardText className="checks">от 12:00</CardText>
+                        </div>
+                        <div className="reserv-aside">
+                            <CardTitle className="checks">Отъезд</CardTitle>
+                            <CardSubtitle className="reserv-date">28 Марта 2020</CardSubtitle>
+                            <CardText className="checks">до 12:00</CardText>
+                        </div>
+                    </div>
+
+                    <div className="reserv-aside">
+                            <CardTitle>Номер</CardTitle>
+                            <CardTitle>Количество</CardTitle>
+                            <CardTitle>Цена номера</CardTitle>
+                    </div>
+
+                    <div className="reserv-aside">
+                            <CardTitle>Номер с 2 кроватями</CardTitle>
+                            <CardTitle>2 ночи, 1 взрослый</CardTitle>
+                            <CardTitle>2500 сомов</CardTitle>
+                    </div>
+
+                    <div className="final">
+                        <div className="reserv-aside">
+                                <CardTitle>Итого(1 ночь, 1 взрослый): </CardTitle>
+                        </div>
+
+                        <div className="reserv-aside">
+                                <CardTitle>2500 сомов</CardTitle>
+                        </div>
+                    </div>
+                </CardBody>
+            </Card>
         </div>
-  );
+    );
 };
 
 export default Aside;

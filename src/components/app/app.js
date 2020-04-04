@@ -4,8 +4,6 @@ import Main from '../pages/main/main';
 import About from '../pages/about/about';
 import Contacts from '../pages/contacts/contacts';
 import Room from '../pages/room/room1/room1';
-import Room2 from '../pages/room/room2/room2';
-import Room2bed from '../pages/room/room2bed/room2bed';
 import Booking from '../pages/booking/booking';
 import Results from '../pages/results/results';
 import Admin from '../pages/admin/admin';

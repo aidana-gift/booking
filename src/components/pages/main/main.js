@@ -14,7 +14,7 @@ const Main = (props) => {
       <div className="container">
         <Filter/>
         <h3 className="card-label" >Наши номера</h3>
-        <CardItem cards={props.cards}/>
+        <CardItem />
       </div>
 
     </div>

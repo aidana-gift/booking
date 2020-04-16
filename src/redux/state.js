@@ -1,7 +1,7 @@
 let state = {
  items: [
     {
-      src: "https://q-cf.bstatic.com/images/hotel/max1024x768/136/136921258.jpg",
+      src: "https://seapearlresortmooloolaba.com.au/wp-content/uploads/2019/07/home-top-slider-ocean.jpg",
       altText: 'Slide 1',
       caption: 'Slide 1'
     },

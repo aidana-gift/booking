@@ -17,14 +17,14 @@
 .img-icons-inst{
     width: 30px;
     height: 30px;
-    background: url('https://pngicon.ru/file/uploads/instagram.png');
+    background: url("../../../images/instagram-logo.png");
     background-size: 28px;
     margin: 10px;
 }
 .img-icons-fb{
     width: 30px;
     height: 30px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Facebook_F_icon.svg/1200px-Facebook_F_icon.svg.png');
+    background: url("../../../images/fb-logo.png");
     background-size: 28px;
 }
 .contact-map{

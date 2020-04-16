@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import dateformat from 'dateformat';
+import { withRouter } from 'react-router-dom';
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import {Input as InputPhone} from 'react-phone-number-input'
 import './user-form.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import * as axios from 'axios';
@@ -11,31 +13,52 @@ import * as axios from 'axios';
 const FormUser = (props) => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [number, setNumber] = useState("")
+    const [number, setNumber] = useState()
     const [email, setEmail] = useState("")
+    const [dateFrom, setDateFrom] = useState("")
+    const [dateTo, setDateTo] = useState("")
+    const [roomName, setRoomName] = useState("")
     //const [time, setTime] = useState()
     const [special, setSpecial] = useState("")
 
-    function handleClick(){
+    useEffect(()=>{
+        console.log(props.info.date_from);
+        const date_from = dateformat(props.info.date_from, 'yyyy-mm-dd')
+        const date_to = dateformat(props.info.date_to, 'yyyy-mm-dd')
+        setDateFrom(date_from);
+        setDateTo(date_to);
+        setRoomName(props.info.room.name);
+        console.log(props.info.date_from);
+      }, []);
+    
+      //console.log(dateFrom, dateTo, roomName, firstName, lastName, email, number)
+
+
+    async function handleClick(){
         if((firstName && lastName && number && email)){
-             alert("Спасибо за бронирование!");
-                 axios.post('https://cors-anywhere.herokuapp.com/https://radiant-fjord-27627.herokuapp.com/bookings/', {
-                    "date_from": props.date_from,
-                    "date_to": props.date_to,
-                    "room": props.room,
+                 await axios.post('https://neobis-booking.herokuapp.com/bookings/', {
+                    "date_from": dateFrom,
+                    "date_to": dateTo,
+                    "comment": "",
+                    "room": roomName,
+                    "book_status": "Not_confirmed",
+                    "book_pay_status": "Unpaid",
+                    "has_child": false,
                     "clientName": firstName,
                     "clientSurname": lastName,
                     "clientEmail": email,
-                    "clientPhone": number,
-                    "comment": special
+                    "clientPhone": number
              },
              {
-                 "Content-Type": 'application/json'
+                 header:{"Content-Type": 'application/json'}
+                 
              })
                     .then((response) => {
                     console.log(response);
+                    alert("Спасибо за бронирование!")
                 }, (error) => {
                     console.log(error);
+                    alert("К сожалению, на эти даты выбранный номер занят")
                 });
                     }
                     else  return alert("Заполните обязательные поля");
@@ -81,10 +104,14 @@ const FormUser = (props) => {
                 <Label for="examplePassword" >Номер телефона
                     <span className="required">*</span>
                 </Label>
-                <PhoneInput
-                    placeholder="Номер телефона"
+                <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}"
+                    placeholder="996xxxxxx"
                     value={number}
-                    onChange={setNumber}
+                    onChange={e => setNumber(e.target.value)}
                     required
                     className="input"
                          />
@@ -106,43 +133,6 @@ const FormUser = (props) => {
                     />
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>
-            {/* <FormGroup>
-                <Label for="exampleSelect">Примерное время прибытия</Label>
-                <Input 
-                    type="select" 
-                    name="select" 
-                    id="exampleSelect" 
-                    placeholder="Не знаю"
-                    value={time}
-                    onChange={e => setTime(e.target.value)}
-                >
-                    <option>Не знаю</option>
-                    <option>00:00</option>
-                    <option>01:00</option>
-                    <option>02:00</option>
-                    <option>03:00</option>
-                    <option>04:00</option>
-                    <option>05:00</option>
-                    <option>06:00</option>
-                    <option>07:00</option>
-                    <option>08:00</option>
-                    <option>09:00</option>
-                    <option>10:00</option>
-                    <option>11:00</option>
-                    <option>12:00</option>
-                    <option>13:00</option>
-                    <option>14:00</option>
-                    <option>15:00</option>
-                    <option>16:00</option>
-                    <option>17:00</option>
-                    <option>18:00</option>
-                    <option>19:00</option>
-                    <option>20:00</option>
-                    <option>21:00</option>
-                    <option>22:00</option>
-                    <option>23:00</option>
-                </Input>
-            </FormGroup> */}
 
             <FormGroup>
                 <Label for="exampleText">Special requests</Label>
@@ -164,4 +154,4 @@ const FormUser = (props) => {
     );
 }
 
-export default FormUser;
+export default withRouter(FormUser);

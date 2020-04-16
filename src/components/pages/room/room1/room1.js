@@ -16,7 +16,7 @@ const [item, setItem] = useState({});
 const id = props.match.params.id;
  
 useEffect(()=>{
-    axios.get("https://cors-anywhere.herokuapp.com/https://radiant-fjord-27627.herokuapp.com/rooms").then(function(res){
+    axios.get("https://cors-anywhere.herokuapp.com/https://neobis-booking.herokuapp.com/rooms/").then(function(res){
     //setState(res.data);
       res.data.map(function(item){
       if(item.id == id){

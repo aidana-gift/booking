@@ -23,7 +23,7 @@ const Contacts = () => {
         }
         else  return alert("Заполните обязательные поля");
 
-        axios.post('https://cors-anywhere.herokuapp.com/https://radiant-fjord-27627.herokuapp.com/feedback/', {
+        axios.post('https://neobis-booking.herokuapp.com/feedback/', {
        "name": name,
        "email": email,
        "subject": subject,

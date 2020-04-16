@@ -7,13 +7,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 const Filter = (props) => {
+  
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [adults, setAdults] = useState(" ");
-
-    function handleClick(){
+    console.log(props)
+    async function handleClick(){
       if((startDate && endDate)){
-           props.history.push({
+           await props.history.push({
              pathname: '/booking',
              state: {date_from: startDate,
                      date_to: endDate,

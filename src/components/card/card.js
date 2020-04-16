@@ -13,33 +13,51 @@ import './card.css';
 import axios from 'axios';
 
 const CardItem = (props) => {
-  const [id, setId] = useState();
-  const [name, setName] = useState();
-  const [price, setPrice] = useState();
-  const [volume, setVolume] = useState();
-  const [img, setImg] = useState();
+
+  const [dateFrom, setDateFrom] = useState();
+  const [dateTo, setDateTo] = useState();
+  const [bookState, setBookingState] = useState();
   const [state, setState] = useState([]);
   
   useEffect(()=>{
-    axios.get("https://cors-anywhere.herokuapp.com/https://radiant-fjord-27627.herokuapp.com/rooms").then(function(res){
-    setState(res.data);
-  });
+    async function requestRooms(){
+        await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
+        setState(res.data);
+      });
+    }
+    async function requestBooking(){
+      await axios.get("https://neobis-booking.herokuapp.com/bookings/").then(function(res){
+        setBookingState(res.data);
+        console.log(res)
+    });
+  }
+    requestRooms();
+    requestBooking();
+    // setDateFrom(props.results.date_from)
+    // setDateTo(props.results.date_to)
   }, []);
+
+ console.log(bookState)
+  console.log(state);
+  console.log(props)
 
   return (
     <div className="cards" className="container">
       <div>
         <div className="row">
-           { state.map(item => <div key={item.id} className="col-md">
-
-             <Card className="card-item">
-             <CardImg src={"https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg"} alt="Card image cap"/>
-                <CardBody>
-                    <CardTitle>{item.name}</CardTitle>
-                    <CardSubtitle><i className="fa fas fa-user">{item.capacity}</i></CardSubtitle>
-                    <CardText>{item.price} сомов</CardText>
-                    <Link to={`room/${item.id}`} ><Button className="card-btn">{"Забронировать"}</Button></Link>
-                </CardBody></Card></div>)}
+           { state.map(item => 
+             <div key={item.id} className="col-md">
+                    <Card className="card-item">
+                    <CardImg src={"https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg"} alt="Card image cap"/>
+                        <CardBody>
+                            <CardTitle>{item.name}</CardTitle>
+                            <CardSubtitle><i className="fa fas fa-user">{item.volume.volume_name}</i></CardSubtitle>
+                            <CardText>{item.price} сомов</CardText>
+                            <Link to={`room/${item.id}`} ><Button className="card-btn">{"Забронировать"}</Button></Link>
+                        </CardBody>
+                      </Card>
+                    </div>
+          )}
         </div>
       </div>
     </div>
@@ -47,3 +65,19 @@ const CardItem = (props) => {
 }
 
 export default withRouter(CardItem);
+
+// { bookState.map(itm => (state.map(item => {if(dateFrom < itm.date_from && dateTo > itm.date_to && item.name === itm.room){
+//   return  <div key={item.id} className="col-md">
+//            <Card className="card-item">
+//            <CardImg src={"https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg"} alt="Card image cap"/>
+//                <CardBody>
+//                    <CardTitle>{item.name}</CardTitle>
+//                    <CardSubtitle><i className="fa fas fa-user">{item.volume.volume_name}</i></CardSubtitle>
+//                    <CardText>{item.price} сомов</CardText>
+//                    <Link to={`room/${item.id}`} ><Button className="card-btn">{"Забронировать"}</Button></Link>
+//                </CardBody>
+//              </Card>
+//            </div>
+//  }
+//  else return}
+//  )))}

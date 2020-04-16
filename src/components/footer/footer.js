@@ -2,6 +2,7 @@ import React from 'react';
 import { Button} from 'reactstrap';
 import './footer.css';
 import '../pages/contacts/contacts.css';
+
 const Footer = () => {
     const name = "Отель Таш-Кумыр";
     const address = "г. Жалал-Абад, ул. Ленина";

@@ -10,9 +10,14 @@ const Filter = (props) => {
   const [endDate, setEndDate] = useState(null);
   const [adults, setAdults] = useState(" ");
 
-  function handleClick(){
-    if((startDate && endDate)){
-         props.history.push('/results')
+  async function handleClick(){
+     if((startDate && endDate)){
+      await props.history.push({
+          pathname: '/results',
+          state: { date_from: startDate,
+                   date_to: endDate,
+                   adults: adults }
+        })
     }
     else alert("Заполните поля дат");
   }

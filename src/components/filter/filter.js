@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { Button, Form } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
+import dateformat from 'dateformat';
 import './filter.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -10,15 +11,29 @@ const Filter = (props) => {
   const [endDate, setEndDate] = useState(null);
   const [adults, setAdults] = useState(" ");
 
-  async function handleClick(){
+  async function handleClick(e){
+    e.preventDefault();
+    
      if((startDate && endDate)){
-      await props.history.push({
+       if(props.location.pathname != "/results"){
+        props.history.push({
           pathname: '/results',
-          state: { date_from: startDate,
-                   date_to: endDate,
+          state: { date_from: dateformat(startDate, 'yyyy-mm-dd'),
+                   date_to: dateformat(endDate,  'yyyy-mm-dd'),
                    adults: adults }
         })
+       }
+       else{
+          window.location.reload()
+          props.history.push({
+          state: { date_from: dateformat(startDate, 'yyyy-mm-dd'),
+                   date_to: dateformat(endDate,  'yyyy-mm-dd'),
+                   adults: adults }
+        })
+          
+       }
     }
+
     else alert("Заполните поля дат");
   }
   
@@ -71,7 +86,7 @@ const Filter = (props) => {
 
         <div>
             <Form>
-            <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
+            <Button outline color="info" className="search-btn" type="submit" onClick={((e) => handleClick(e))}>
               <span>{"Поиск"}</span>
             </Button>
             </Form>

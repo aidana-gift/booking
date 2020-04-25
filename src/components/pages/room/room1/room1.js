@@ -12,7 +12,6 @@ const calendarLabel = "Проверьте наличие мест на Вашу 
 const Room = (props) => {
 
 const [state, setState] = useState([]);
-const [item, setItem] = useState({});
 const id = props.match.params.id;
  
 useEffect(()=>{

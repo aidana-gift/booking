@@ -54,7 +54,7 @@ const Filter = (props) => {
         />
        </div>
       
-      <div className="filter-item">
+      {/* <div className="filter-item">
         <input 
           type="number" 
           name="minSize" 
@@ -66,7 +66,7 @@ const Filter = (props) => {
           onChange={e => setAdults(e.target.value)}
               />
       </div>
- 
+  */}
       <div className="filter-item">
             <Form>
             <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>

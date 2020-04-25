@@ -6,8 +6,10 @@ import './calendar.css';
 
 const Calendar = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const busyData = ['2020-03-25','2020-03-27'];
-  const bookedData = ['2020-03-19','2020-03-20'];
+  const busyData = ['2020-04-26', '2020-04-28'];
+  // const busyDataFrom = ['2020-04-26'];
+  // const busyDataTo= ['2020-04-28'];
+  const bookedData = ['2020-05-01','2020-05-5'];
   const busyDataMapped = busyData.map(item => new Date(item));
   const bookedDataMapped = bookedData.map(item => new Date(item));
 
@@ -21,6 +23,16 @@ const Calendar = () => {
       bookedDataMapped
     }
   ];
+
+//   function dataPick(){
+//     let dataArray = [];
+//   while(busyDataFrom < busyDataTo){
+    
+//     dataArray.push(busyDataFrom.getData()+1)
+//   }
+//   return dataArray;
+// }
+// dataPick();
   return (
     <div className="room-calendar">
       <DatePicker

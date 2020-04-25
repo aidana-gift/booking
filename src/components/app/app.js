@@ -34,9 +34,9 @@ const App = (props) => {
                                     />}/>
             <Route exact path='/booking' 
                   render={(props) => <Booking  {...props} />}/>
-            <Route exact path='/results' 
+            <Route exact path={'/results'} 
                   render={() => <Results 
-                        cards={props.state.cards} />} />
+                         />} />
             <Route exact path='/admin' 
                   render={() => <Admin />} />
             <Route exact path='/edit' 

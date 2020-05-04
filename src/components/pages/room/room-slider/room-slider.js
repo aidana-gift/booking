@@ -21,6 +21,7 @@ const items = [
 ];
 
 const RoomSlider = () => {
+  
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

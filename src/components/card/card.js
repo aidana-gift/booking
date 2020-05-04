@@ -40,7 +40,7 @@ console.log(props);
           {state.map(item => 
         <div key={item.id} className="col-md">
                <Card className="card-item">
-               <CardImg src={"https://q-cf.bstatic.com/images/hotel/max1024x768/112/112644291.jpg"} alt="Card image cap"/>
+               <CardImg src={item.images[0]} alt="Card image cap"/>
                    <CardBody>
                        <CardTitle>{item.name}</CardTitle>
                        <CardSubtitle><i className="fa fas fa-user">{item.volume.volume_name}</i></CardSubtitle>

@@ -44,8 +44,8 @@ useEffect(()=>{
             <ScrollToTopControlller />
            <div className="col-12 room-heading">{state.name}</div>
             <div className="col-12 room-post-heading">{state.price} сомов</div>
-            <div className="col-8"><RoomSlider /></div>
-            <div className="col-4"><Info /></div>
+            <div className="col-8"><RoomSlider roomId={id}/></div>
+            <div className="col-4"><Info room={state}/></div>
             <div className="col-12 cal-label">{calendarLabel}</div>
             <div className="col-10 room-calendar"><Calendar room = {state.name}/></div>
             <div className="col-12"><Filter room={state}/></div>

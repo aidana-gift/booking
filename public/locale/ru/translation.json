@@ -1,3 +1,7 @@
 {
-    "about": "О нас"
+    "mainPage": {
+        "1": "Главная"},
+    "aboutProject": "О нас",
+    "booking": "Бронирование",
+    "contacts": "Контакты"
 }

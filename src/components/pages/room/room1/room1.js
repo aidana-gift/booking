@@ -12,18 +12,22 @@ const calendarLabel = "Проверьте наличие мест на Вашу 
 const Room = (props) => {
 
 const [state, setState] = useState([]);
+const [loading, setloading] = useState(false);
 const id = props.match.params.id;
  
 useEffect(()=>{
-    axios.get("https://cors-anywhere.herokuapp.com/https://neobis-booking.herokuapp.com/rooms/").then(function(res){
+    async function getRoom(){
+        await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
     //setState(res.data);
       res.data.map(function(item){
       if(item.id == id){
-          return setState(item);
+          setloading(true)
+           setState(item);
       }
   })
-  });
+  });}
   
+  getRoom()
   }, []);
 
 
@@ -33,16 +37,29 @@ useEffect(()=>{
   console.log(id);
     return (
         <div className="container">
+            {(() => {
+        if (loading != false) {
+          return (
             <div className="row">
-                <ScrollToTopControlller />
-               <div className="col-12 room-heading">{state.name}</div>
-                <div className="col-12 room-post-heading">{state.price} сомов</div>
-                <div className="col-8"><RoomSlider /></div>
-                <div className="col-4"><Info /></div>
-                <div className="col-12 cal-label">{calendarLabel}</div>
-                <div className="col-10 room-calendar"><Calendar /></div>
-                <div className="col-12"><Filter room={state}/></div>
-            </div>
+            <ScrollToTopControlller />
+           <div className="col-12 room-heading">{state.name}</div>
+            <div className="col-12 room-post-heading">{state.price} сомов</div>
+            <div className="col-8"><RoomSlider /></div>
+            <div className="col-4"><Info /></div>
+            <div className="col-12 cal-label">{calendarLabel}</div>
+            <div className="col-10 room-calendar"><Calendar room = {state.name}/></div>
+            <div className="col-12"><Filter room={state}/></div>
+        </div>
+          )
+          
+        }  else {
+          return (
+            
+            <div>Loading...</div>
+          )
+        }
+      })()}
+           
         </div>
     )
 }

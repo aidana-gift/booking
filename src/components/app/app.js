@@ -6,11 +6,10 @@ import Contacts from '../pages/contacts/contacts';
 import Room from '../pages/room/room1/room1';
 import Booking from '../pages/booking/booking';
 import Results from '../pages/results/results';
-import Admin from '../pages/admin/admin';
-import Edit from '../pages/admin/edit/edit';
 import Footer from '../footer/footer';
 import NoMatch from '../pages/noMatch/noMatch';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { withTranslation } from 'react-i18next';
 import './app.css';
 
 
@@ -37,10 +36,6 @@ const App = (props) => {
             <Route exact path={'/results'} 
                   render={() => <Results 
                          />} />
-            <Route exact path='/admin' 
-                  render={() => <Admin />} />
-            <Route exact path='/edit' 
-                  render={() => <Edit />} />
             <Route component={NoMatch} />
 
           </Switch>
@@ -51,4 +46,4 @@ const App = (props) => {
   );
 };
 
-export default App;
+export default withTranslation()(App);

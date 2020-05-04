@@ -13,16 +13,15 @@ import * as axios from 'axios';
 const FormUser = (props) => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
-    const [number, setNumber] = useState()
+    const [number, setNumber] = useState("")
     const [email, setEmail] = useState("")
     const [dateFrom, setDateFrom] = useState("")
     const [dateTo, setDateTo] = useState("")
     const [roomName, setRoomName] = useState("")
-    //const [time, setTime] = useState()
     const [special, setSpecial] = useState("")
+    const [isChecked, setIsChecked] = useState(false)
 
     useEffect(()=>{
-        console.log(props.info.date_from);
         const date_from = dateformat(props.info.date_from, 'yyyy-mm-dd')
         const date_to = dateformat(props.info.date_to, 'yyyy-mm-dd')
         setDateFrom(date_from);
@@ -33,17 +32,15 @@ const FormUser = (props) => {
     
       //console.log(dateFrom, dateTo, roomName, firstName, lastName, email, number)
 
-
     async function handleClick(){
         if((firstName && lastName && number && email)){
                  await axios.post('https://neobis-booking.herokuapp.com/bookings/', {
+
                     "date_from": dateFrom,
                     "date_to": dateTo,
-                    "comment": "",
+                    "comment": special,
                     "room": roomName,
-                    "book_status": "Not_confirmed",
-                    "book_pay_status": "Unpaid",
-                    "has_child": false,
+                    "has_child": isChecked,
                     "clientName": firstName,
                     "clientSurname": lastName,
                     "clientEmail": email,
@@ -109,7 +106,7 @@ const FormUser = (props) => {
                     id="phone"
                     name="phone"
                     pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}"
-                    placeholder="996xxxxxx"
+                    placeholder="0xxxxxxxxx"
                     value={number}
                     onChange={e => setNumber(e.target.value)}
                     required
@@ -131,6 +128,12 @@ const FormUser = (props) => {
                     required
                     className="input"
                     />
+            </FormGroup>
+            <FormGroup check>
+                <Label check>
+                    <Input type="checkbox" onChange={e => setIsChecked(!isChecked)}/>
+                        Со мной будут дети
+                </Label>
             </FormGroup>
             <Label className="form-header">Дополнительная информация</Label>
 

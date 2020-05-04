@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Card,
     CardImg,
@@ -8,10 +8,26 @@ import {
     CardSubtitle,
     Button
 } from 'reactstrap';
-
+import dateformat from 'dateformat';
 import './book-info.css';
 
-const Aside = () => {
+const Aside = (props) => {
+    const [dateFrom, setDateFrom] = useState("")
+    const [dateTo, setDateTo] = useState("")
+    const [room, setRoom] = useState("")
+    //const [roomName, setRoomName] = useState("")
+   let checkin = new Date(dateFrom);
+   let checkout = new Date(dateTo)
+   let diff = (checkout.getTime() - checkin.getTime())/(1000 * 3600 * 24)
+   console.log(props.info)
+    useEffect(()=>{
+        const date_from = dateformat(props.info.date_from, 'yyyy-mm-dd')
+        const date_to = dateformat(props.info.date_to, 'yyyy-mm-dd')
+        setDateFrom(date_from);
+        setDateTo(date_to);
+        setRoom(props.info.room);
+        console.log(props.info.date_from);
+      }, []);
     return (
         <div>
             <Card className="card-item">
@@ -19,12 +35,12 @@ const Aside = () => {
                     <div className="top-info">
                         <div className="reserv-aside">
                             <CardTitle className="checks">Прибытие</CardTitle>
-                            <CardSubtitle className="reserv-date">27 Марта 2020</CardSubtitle>
+                            <CardSubtitle className="reserv-date">{dateFrom}</CardSubtitle>
                             <CardText className="checks">от 12:00</CardText>
                         </div>
                         <div className="reserv-aside">
                             <CardTitle className="checks">Отъезд</CardTitle>
-                            <CardSubtitle className="reserv-date">28 Марта 2020</CardSubtitle>
+                            <CardSubtitle className="reserv-date">{dateTo}</CardSubtitle>
                             <CardText className="checks">до 12:00</CardText>
                         </div>
                     </div>
@@ -36,18 +52,18 @@ const Aside = () => {
                     </div>
 
                     <div className="reserv-aside">
-                            <CardTitle>Номер с 2 кроватями</CardTitle>
-                            <CardTitle>2 ночи, 1 взрослый</CardTitle>
-                            <CardTitle>2500 сомов</CardTitle>
+                            <CardTitle>{room.name}, {props.info.room.category.name}</CardTitle>
+                            <CardTitle>{diff} ночей, {props.info.room.volume.id} гостей</CardTitle>
+                            <CardTitle>{room.price} сомов</CardTitle>
                     </div>
 
                     <div className="final">
                         <div className="reserv-aside">
-                                <CardTitle>Итого(1 ночь, 1 взрослый): </CardTitle>
+                                <CardTitle>Итого: </CardTitle>
                         </div>
 
                         <div className="reserv-aside">
-                                <CardTitle>2500 сомов</CardTitle>
+                                <CardTitle>{room.price} сомов</CardTitle>
                         </div>
                     </div>
                 </CardBody>
@@ -57,29 +73,3 @@ const Aside = () => {
 };
 
 export default Aside;
-
-
-
-/*
-<div className="container">
-          <aside className="reservation-aside">
-              <div className="reservation">
-                  <div className="reservation-section reservation-section-dates">
-                      <div className="reservation-dates">
-                          <div className="reservation-date reservation-date-checkin">
-                              <span className="reservation-date__title">Прибытие</span>
-                              <div className="reservation-date__date">
-                                  <span className="reservation-date__day" data-date-format="d">27</span>
-                                  <span className="reservation-date__week" data-date-format="l">Пятница</span>
-                                  <span className="reservation-date__year" data-date-format="M Y">Март 2020</span>
-                              </div>
-                              <span className="reservation-date__time">от 12:00</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div className="reservation-section reservation-section-room"></div>
-                  <div className="reservation-section reservation-section-totals"></div>
-              </div>
-          </aside>
-      </div>
-*/

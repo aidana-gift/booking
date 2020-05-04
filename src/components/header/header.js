@@ -9,7 +9,7 @@ const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);
   const { t, i18n} = useTranslation();
   const [lang,setLang] = useState(localStorage.getItem('language'));
-  const toggleNavbar = () => setCollapsed(!collapsed);
+  const toggleNavbar = () => setCollapsed(!collapsed); 
 
   const handleChange = (language) => {
     localStorage.setItem('language',language);
@@ -29,7 +29,7 @@ const Header = (props) => {
 
         <div className={"d-block d-md-none"}>
         <Button className="kg btn"
-            // color={"faded"}1
+            // color={"faded"}
             // className={`header-button shadow-none ${
             //   lang === "ru" ? "" : "text-muted"
             // }`}
@@ -54,27 +54,22 @@ const Header = (props) => {
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/"}>Главная</Link>
+                <Link to={"/"}>{t("mainPage.1")}</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/about"}>О нас</Link>
+                <Link to={"/about"}>{t("aboutProject")}</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/results"}>Бронирование</Link>
+                <Link to={"/results"}>{t("booking")}</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/contacts"}>Контакты</Link>
-              </NavLink>
-            </NavItem>
-            <NavItem className="item">
-              <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/admin"}>Админ</Link>
+                <Link to={"/contacts"}>{t("contacts")}</Link>
               </NavLink>
             </NavItem>
           </Nav>

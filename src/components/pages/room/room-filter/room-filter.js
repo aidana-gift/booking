@@ -18,7 +18,8 @@ const Filter = (props) => {
              pathname: '/booking',
              state: {date_from: startDate,
                      date_to: endDate,
-                     room: props.room
+                     room: props.room,
+                    // adults: adults
                      }})
       }
       else return alert("Заполните поля дат");

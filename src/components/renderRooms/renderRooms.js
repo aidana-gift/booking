@@ -19,20 +19,7 @@ const RenderRooms = (props) => {
 
 console.log(props);
   useEffect(()=>{
-    async function requestRooms(){
-        await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
-        setState(res.data);
-        setLoadRooms(true);
-        console.log(res.data);
-      });
-    }
-    async function requestBooking(){
-      await axios.get("https://neobis-booking.herokuapp.com/bookings/").then(function(res){
-        setBookingState(res.data);
-        console.log(res.data)
-        setloadBook(true);
-    });
-  }
+
     requestRooms();
     requestBooking();
 
@@ -45,18 +32,42 @@ console.log(props);
 
   }, []);
 
+  async function requestRooms(){
+    await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
+    setState(res.data);
+    setLoadRooms(true);
+    console.log(res.data);
+  });
+}
+async function requestBooking(){
+  await axios.get("https://neobis-booking.herokuapp.com/bookings/").then(function(res){
+    setBookingState(res.data);
+    console.log(res.data)
+    setloadBook(true);
+});
+}
+  
 async function searchRooms(){
     if(dateFrom && dateTo){
       resultMap = bookState.filter(book => dateFrom <= book.date_from && dateTo >= book.date_from ||
                               dateFrom >= book.date_from && dateTo <= book.date_to ||
                               dateFrom <= book.date_to && dateTo >= book.date_to ||
                               dateFrom <= book.date_from && dateTo >= book.date_to )
-                             .map(item => {
-                               state.map(el => {
-                                 if(item.room != el.name)
-                                 roomMap.push(el);
-                               })
-                             })
+    if(resultMap.length != 0){
+      resultMap.map(item => {
+        state.map(el => {
+          if(item.room != el.name && capacity == el.volume.volum_name)
+          roomMap.push(el);
+        })
+      })
+    }
+    else{
+      state.map(el => {
+        if(capacity == el.volume.id)
+        roomMap.push(el);
+      })
+    }
+                             
     } 
 }
 
@@ -77,9 +88,15 @@ function Choose(props){
   if(isFull.length != 0){
     return <CardItem rooms={isFull}/>
   }
-  return <CardItem rooms = {state}/>
+  else if(dateFrom == undefined){
+    return <CardItem rooms={state}/>
+  }
+  else{
+    return "No such rooms"
+  }
+  
 }
-  console.log(props)
+  console.log(dateFrom != true)
   return (
       <div className="container">
         <Choose isFull={roomMap} />

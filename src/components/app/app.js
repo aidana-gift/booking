@@ -22,8 +22,7 @@ const App = (props) => {
           <Switch>
             <Route exact path="/" 
                   render={() => <Main 
-                      items={props.state.items} 
-                      cards={props.state.cards} />} />
+                       />} />
             <Route exact path='/about' 
                   render={() => <About />} />
             <Route exact path='/contacts' 

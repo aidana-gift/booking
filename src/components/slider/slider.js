@@ -1,27 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
 } from 'reactstrap';
+import axios from 'axios';
 import './slider.css';
 
 
-
 const Slider = (props) => {
+    const [images, setState] = useState([]);
+
+    useEffect(()=>{
+
+    requestRooms();
+
+  }, []);
+
+console.log(images)
+  async function requestRooms(){
+    await axios.get("https://neobis-booking.herokuapp.com/images").then(function(res){
+    setState(res.data);
+  });
+}
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === props.items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? props.items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   }
 
@@ -30,17 +45,16 @@ const Slider = (props) => {
     setActiveIndex(newIndex);
   }
 
-  const slides = props.items.map((item) => {
+  const slides = images.map((item) => {
     return (
       <CarouselItem
         className="custom-tag"
         tag="div"
-        key={item.src}
+        key={item.id}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >
-        <img src={item.src} alt={item.altText} />
-        {/* <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} /> */}
+        <img className="image" src={item.image} alt={item.name} />
       </CarouselItem>
     );
   });
@@ -52,7 +66,7 @@ const Slider = (props) => {
         previous={previous}
         next={next}
       >
-        <CarouselIndicators items={props.items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <CarouselIndicators items={images} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />

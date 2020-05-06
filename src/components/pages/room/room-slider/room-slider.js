@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Carousel,
   CarouselItem,
@@ -6,34 +6,49 @@ import {
   CarouselIndicators,
 } from 'reactstrap';
 import './room-slider.css';
+import axios from 'axios';
 
-const items = [
-  {
-    src: "https://www.royalgardenparis.com/media/cache/jadro_resize/rc/qqcSVvLi1583314126/jadroRoot/medias/5679581114f10/hotel-royal-garden-champs-elysees-paris-10.jpg",
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: "https://www.bohle.com/media/image/87/f3/ec/BO_5215089-91_PF1_C_zoom6lL5xQ75jUz4C_600x600.jpg",
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  }
-];
+const RoomSlider = (props) => {
+  const [state, setState] = useState();
+  let images = [];
+  const [load, setLoad] = useState(false);
 
-const RoomSlider = () => {
-  
+    useEffect(()=>{
+
+    requestRooms();
+
+  }, []);
+
+  if(load){
+  state.map((item) => {
+    if(item.id == props.roomId){
+      images = item.images;
+    }
+  })
+}
+
+  async function requestRooms(){
+    await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
+    setState(res.data);
+    setLoad(true);
+    console.log(res.data);
+  });
+}
+
+
+console.log(props);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
   const next = () => {
     if (animating) return;
-    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    const nextIndex = activeIndex === images.length - 1 ? 0 : activeIndex + 1;
     setActiveIndex(nextIndex);
   }
 
   const previous = () => {
     if (animating) return;
-    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === 0 ? images.length - 1 : activeIndex - 1;
     setActiveIndex(nextIndex);
   }
 
@@ -41,17 +56,17 @@ const RoomSlider = () => {
     if (animating) return;
     setActiveIndex(newIndex);
   }
-
-  const slides = items.map((item) => {
+console.log(images)
+  const slides = images.map((item) => {
     return (
       <CarouselItem
         className="custom-tag-img"
         tag="div"
-        key={item.src}
+        key={item}
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >
-        <img src={item.src} alt={item.altText} />
+        <img src={item} />
         {/* <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} /> */}
       </CarouselItem>
     );
@@ -64,7 +79,7 @@ const RoomSlider = () => {
         previous={previous}
         next={next}
       >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        <CarouselIndicators items={images} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />

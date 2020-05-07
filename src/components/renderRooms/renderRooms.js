@@ -8,29 +8,29 @@ import ScrollToTopControlller from '../sroll-to-top/scroll-to-top';
 const RenderRooms = (props) => {
   let [resultMap, setResultMap] = useState([]);
   let roomMap = [];
-  const [dateFrom, setDateFrom] = useState(props.location.state.date_from);
-  const [dateTo, setDateTo] = useState(props.location.state.date_to);
+  const [dateFrom, setDateFrom] = useState(props.location.state);
+  const [dateTo, setDateTo] = useState(props.location.state);
   const [bookState, setBookingState] = useState([]);
   const [state, setState] = useState([]);
   const [roomsArray, setRoomsArray] = useState([]);
   const [loadRooms, setLoadRooms] = useState(false);
   const [loadBook, setloadBook] = useState(false);
-  const [capacity, setCapacity] = useState(props.location.state.adults);
+  const [capacity, setCapacity] = useState(props.location.state);
 
 console.log(props);
   useEffect(()=>{
 
     requestRooms();
     requestBooking();
-    searchRooms();
+    //searchRooms();
 
-  //   if(props.location.state){
-  //   // setDateFrom(props.location.state.date_from )
-  //   // setDateTo(props.location.state.date_to)
-  //   // setCapacity(props.location.state.adults)
-  //   searchRooms()
-  //  console.log(dateFrom)
-  //  }
+    if(props.location.state){
+    setDateFrom(dateFrom.date_from )
+    setDateTo(dateTo.state.date_to)
+    setCapacity(capacity.adults)
+    searchRooms()
+   console.log(dateFrom)
+   }
 
   }, []);
 

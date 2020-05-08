@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import {  Button, Form } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import '../../../filter/filter.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -11,6 +12,7 @@ const Filter = (props) => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
     const [adults, setAdults] = useState(" ");
+    const { t } = useTranslation();
     console.log(props)
     async function handleClick(){
       if((startDate && endDate)){
@@ -28,7 +30,7 @@ const Filter = (props) => {
       <div className="filter row">
         <div>
         <DatePicker
-          placeholderText="Въезд"
+          placeholderText={t("checkin")}
           selected={startDate}
           onChange={date => setStartDate(date)}
           selectsStart
@@ -42,7 +44,7 @@ const Filter = (props) => {
        
        <div>
        <DatePicker
-          placeholderText="Выезд"
+          placeholderText={t("checkout")}
           selected={endDate}
           onChange={date => setEndDate(date)}
           selectsEnd
@@ -70,7 +72,7 @@ const Filter = (props) => {
       <div className="filter-item">
             <Form>
             <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
-              <span>Забронировать</span>
+              <span>{t("bookbtn")}</span>
             </Button>
             </Form>
         </div>

@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import { Button, Form } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import dateformat from 'dateformat';
+import { useTranslation } from 'react-i18next';
 import './filter.css';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -10,6 +11,8 @@ const Filter = (props) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [adults, setAdults] = useState(" ");
+
+  const { t } = useTranslation();
 
   async function handleClick(e){
     e.preventDefault();
@@ -42,7 +45,7 @@ const Filter = (props) => {
       <div className="filter row">
         <div>
           <DatePicker
-            placeholderText="Въезд"
+            placeholderText={t("checkin")}
             selected={startDate}
             onChange={date => setStartDate(date)}
             selectsStart
@@ -56,7 +59,7 @@ const Filter = (props) => {
 
         <div>
           <DatePicker
-            placeholderText="Выезд"
+            placeholderText={t("checkout")}
             selected={endDate}
             onChange={date => setEndDate(date)}
             selectsEnd
@@ -77,7 +80,7 @@ const Filter = (props) => {
               min="1" 
               id="size" 
               className="size-input filter-item" 
-              placeholder="взрослые" 
+              placeholder={t("adults")}
               value={adults}
               onChange={e => setAdults(e.target.value)}
               />
@@ -87,7 +90,7 @@ const Filter = (props) => {
         <div>
             <Form>
             <Button outline color="info" className="search-btn" type="submit" onClick={((e) => handleClick(e))}>
-              <span>{"Поиск"}</span>
+              <span>{t("search")}</span>
             </Button>
             </Form>
         </div>

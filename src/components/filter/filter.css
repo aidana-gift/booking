@@ -2,11 +2,13 @@
     margin-top: 35px;
     margin-bottom: 16px;
     justify-content: center;
-    padding: 4px;
+    padding: 10px;
     box-sizing: border-box;
+    width: 80%;
     border: 0;
-    border-radius: 4px;
-    background-color: #b3e5fc;
+    border-radius: 0px;
+    margin: 2% auto;
+    /* background-color: #b3e5fc; */
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .search-btn{
@@ -23,7 +25,8 @@
 }
 .filter-item{
     margin-left: 3px;
-    border-radius: 4px;
+    border-radius: 0px;
+    border-color: lightskyblue;
     height: 50px;
 }
 

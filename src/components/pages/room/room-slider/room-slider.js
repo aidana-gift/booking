@@ -66,7 +66,7 @@ console.log(images)
         onExiting={() => setAnimating(true)}
         onExited={() => setAnimating(false)}
       >
-        <img src={item} />
+        <img src={item} className="custom-tag-img"/>
         {/* <CarouselCaption className="text-danger" captionText={item.caption} captionHeader={item.caption} /> */}
       </CarouselItem>
     );
@@ -75,6 +75,7 @@ console.log(images)
   return (
     <div className="container room-slider"> 
       <Carousel
+        className="carousel"
         activeIndex={activeIndex}
         previous={previous}
         next={next}

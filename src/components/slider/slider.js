@@ -18,7 +18,6 @@ const Slider = (props) => {
 
   }, []);
 
-console.log(images)
   async function requestRooms(){
     await axios.get("https://neobis-booking.herokuapp.com/images").then(function(res){
     setState(res.data);

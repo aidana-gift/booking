@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import CardItem from '../card/card';
 import Filter from '../filter/filter';
 import { withRouter } from 'react-router-dom';
@@ -12,41 +12,37 @@ const RenderRooms = (props) => {
   const [dateTo, setDateTo] = useState(props.location.state);
   const [bookState, setBookingState] = useState([]);
   const [state, setState] = useState([]);
-  const [roomsArray, setRoomsArray] = useState([]);
   const [loadRooms, setLoadRooms] = useState(false);
-  const [loadBook, setloadBook] = useState(false);
   const [capacity, setCapacity] = useState(props.location.state);
+  const isMountedRef = useRef(null);
 
 console.log(props);
-  useEffect(()=>{
 
-    requestRooms();
-    requestBooking();
-    //searchRooms();
+useEffect(()=>{
+  isMountedRef.current = true;
+  requestRooms();
 
-    if(props.location.state){
+  if(props.location.state){
+    setDateTo(dateTo.date_to)
     setDateFrom(dateFrom.date_from )
-    setDateTo(dateTo.state.date_to)
+    
     setCapacity(capacity.adults)
-    searchRooms()
-   console.log(dateFrom)
-   }
+    //searchRooms()
+  }
+  
+ console.log(dateFrom, dateTo)
 
-  }, []);
+  return () => isMountedRef.current = false;
+
+}, []);
 
   async function requestRooms(){
-    await axios.get("https://neobis-booking.herokuapp.com/rooms/").then(function(res){
-    setState(res.data);
+    await axios.get("https://neobis-booking.herokuapp.com/front").then(function(res){
+    setState(res.data.results.Room);
+    setBookingState(res.data.results.Booking);
     setLoadRooms(true);
     console.log(res.data);
   });
-}
-async function requestBooking(){
-  await axios.get("https://neobis-booking.herokuapp.com/bookings/").then(function(res){
-    setBookingState(res.data);
-    console.log(res.data)
-    setloadBook(true);
-});
 }
   
  function searchRooms(){
@@ -62,8 +58,21 @@ async function requestBooking(){
         console.log(item)
         state.map(el => {
           console.log(el)
-          if(item.room != el.name && capacity == el.volume.id)
-          roomMap.push(el);
+          if(capacity){
+            if(item.room != el.name && capacity == el.volume.id){
+              roomMap.length = 0
+              roomMap.push(el);
+            }
+            
+          }
+          else{
+            if(item.room != el.name){
+              roomMap.length = 0
+            return roomMap.push(el);
+            }
+            
+          }
+          
         })
       })
       console.log(roomMap)
@@ -81,18 +90,6 @@ if(dateFrom){
   searchRooms()
 }
 
-// function callback(book){
-//   return state.filter(el => el.name != book.room);
-// }
-
-// if(loadRooms && loadBook){
-//     searchRooms();
-//     console.log(resultMap);
-//     console.log(roomMap, capacity);
-//     // setLoadRooms(false);
-//     // setResultMap(false); 
-// }
-
 function Choose(props){
   const isFull = props.isFull;
   if(isFull.length != 0){
@@ -109,7 +106,7 @@ function Choose(props){
 console.log(resultMap);
 console.log(roomMap, capacity);
   console.log(loadRooms)
-  console.log(dateFrom)
+  console.log(dateFrom, dateTo)
   return (
       <div className="container">
         <Choose isFull={roomMap} />

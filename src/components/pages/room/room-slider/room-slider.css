@@ -1,7 +1,13 @@
  .custom-tag-img{
     width: 600px;
     height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+/* .carousel{
+    width: 640px;
+    height: 360px;
+} */
 @media (max-width: 900px) {
     .carousel {
       width:auto;

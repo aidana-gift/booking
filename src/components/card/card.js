@@ -9,20 +9,14 @@ import {
   Button
 } from 'reactstrap';
 import { Link, withRouter } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './card.css';
 
 
 const CardItem = (props) => {
-  let [resultMap, setResultMap] = useState([]);
-  let [roomMap, setRoomMap] = useState([]);
-  const [dateFrom, setDateFrom] = useState();
-  const [dateTo, setDateTo] = useState();
-  const [bookState, setBookingState] = useState([]);
   const [state, setState] = useState([]);
-  const [roomsArray, setRoomsArray] = useState([]);
-  const [loadRooms, setLoadRooms] = useState(false);
-  const [loadBook, setloadBook] = useState(false);
   
+  const { t } = useTranslation();
   useEffect(()=>{
       if(props.rooms){
     setState(props.rooms)
@@ -37,15 +31,16 @@ console.log(props);
     <div className="cards" className="container">
       <div>
         <div className="row">
-          {state.map(item => 
-        <div key={item.id} className="col-md">
-               <Card className="card-item">
-               <CardImg src={item.images[0]} alt="Card image cap"/>
+          {state.map((item) => 
+        <div key={item.id} className="col-3">
+               <Card className="card-item" className="card-font">
+               <CardImg src={item.images[0]} alt="Card image cap" className="card-img"/>
                    <CardBody>
                        <CardTitle>{item.name}</CardTitle>
-                       <CardSubtitle><i className="fa fas fa-user">{item.volume.volume_name}</i></CardSubtitle>
+                        <CardSubtitle >{item.category.name}</CardSubtitle>
+                       <CardSubtitle><i className="fa fas fa-user font-margin"> {item.volume.volume_name}</i></CardSubtitle>
                        <CardText>{item.price} сомов</CardText>
-                       <Link to={`room/${item.id}`} ><Button className="card-btn">{"Забронировать"}</Button></Link>
+                       <Link to={`room/${item.id}`} ><Button className="card-btn">{t("bookbtn")}</Button></Link>
                    </CardBody>
                  </Card>
                </div>

@@ -9,7 +9,6 @@ import Results from '../pages/results/results';
 import Footer from '../footer/footer';
 import NoMatch from '../pages/noMatch/noMatch';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { withTranslation } from 'react-i18next';
 import './app.css';
 
 
@@ -45,4 +44,4 @@ const App = (props) => {
   );
 };
 
-export default withTranslation()(App);
+export default App;

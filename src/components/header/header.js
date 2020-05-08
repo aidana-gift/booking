@@ -8,11 +8,13 @@ import './header.css'
 const Header = (props) => {
   const [collapsed, setCollapsed] = useState(true);
   const { t, i18n} = useTranslation();
-  const [lang,setLang] = useState(localStorage.getItem('language'));
+  const [lang,setLang] = useState(localStorage.getItem('i18nextLng'));
   const toggleNavbar = () => setCollapsed(!collapsed); 
 
+  //console.log(lang)
+
   const handleChange = (language) => {
-    localStorage.setItem('language',language);
+    localStorage.setItem('i18nextLng',language);
     setLang(language);
     window.location.reload(true);
     i18n.changeLanguage(language);
@@ -23,24 +25,17 @@ const Header = (props) => {
       <Navbar light expand="md">
         <NavbarBrand tag={'div'} className  ="mr-auto span"  >
           <Link to={"/"}> 
-              <h3 className="hotel-name">Отель Таш-Кумыр</h3> 
+              <h3 className="hotel-name">{t("heading")}</h3> 
           </Link>
         </NavbarBrand>
 
         <div className={"d-block d-md-none"}>
         <Button className="kg btn"
-            // color={"faded"}
-            // className={`header-button shadow-none ${
-            //   lang === "ru" ? "" : "text-muted"
-            // }`}
                 onClick={() => handleChange("kg")}
           >
           </Button>
 
           <Button className="rus btn" 
-                  className = {`${
-              lang === "ru" ? "" : "text-muted"
-            }`}
                   onClick={() => handleChange("ru") }>
           </Button>
 
@@ -54,7 +49,7 @@ const Header = (props) => {
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
             <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
-                <Link to={"/"}>{t("mainPage.1")}</Link>
+                <Link to={"/"}>{t("mainPage")}</Link>
               </NavLink>
             </NavItem>
             <NavItem className="item">
@@ -81,12 +76,17 @@ const Header = (props) => {
             // className={`header-button shadow-none ${
             //   lang === "ru" ? "" : "text-muted"
             // }`}
-            // onClick={() => handleChange("ru")}
+            onClick={() => handleChange("kg")}
           >
           </Button>
-          <Button className="rus btn">
+          <Button className="rus btn"
+            onClick={() => handleChange("ru")}
+          >
           </Button>
-          <Button className="en btn">
+
+          <Button className="en btn"
+            onClick={() => handleChange("en")}
+          >
           </Button>
         </div>
 

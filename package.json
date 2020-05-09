@@ -23,13 +23,13 @@
     "react-phone-number-input": "^3.0.19",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "3.3.0",
     "reactstrap": "^8.4.1",
     "redux": "^4.0.5",
     "style-loader": "^1.1.3"
   },
   "scripts": {
-    "start": "node components/app/app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

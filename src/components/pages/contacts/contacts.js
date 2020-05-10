@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import './contacts.css';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 import { getData, postData} from '../../../request/request.js';
 import { Link } from 'react-router-dom';
 
@@ -10,12 +11,11 @@ const address = "г. Жалал-Абад ул.Ленина д.65";
 const phone = "+996 770 591 000";
 
 const Contacts = () => {
-    const [value, setValue] = useState()
-    const [mystate, setMystate] = useState([]);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
+    const { t } = useTranslation();
 
         function handleClick(){
         if((name && email && subject && message)){
@@ -35,42 +35,25 @@ const Contacts = () => {
         console.log(error);
     });
       }
-
-//    useState(()=> {
-//        postData('feedback', {
-//            "name": "dkdskf"
-//        }).then(res=>{
-//            console.log(res);
-//        })
-//    })
-
-    // useEffect(()=>{
-    //     getData("feedback")
-    //         .then(res=>{
-    //             mystate(res);
-    //         })
-    //         .catch(error=>console.log(error))
-    // },[]);
-    // console.log(mystate)
    
     return (
         <div className="container">
             <div className="row contacts">
                 <div className="info col-6">
                     <ScrollToTopControlller />
-                    <div className="contact-header">Контактная информация</div>
-                    <div className="label">Наш адрес:   {address}</div>
-                    <div className="label">Телефон для связи:   {phone}</div>
-                    <div className="label">Мы в соцсетях:
+                    <div className="contact-header">{t("contactInfo")}</div>
+                    <div className="label">{t("ourAddress")}:   {address}</div>
+                    <div className="label">{t("phoneToReach")}:   {phone}</div>
+                    <div className="label">{t("ourSocialSites")}:
                         <Link to="https://www.instagram.com/kokartjalalabad1/"><Button className="img-icons-inst"></Button></Link>
                         <Button className="img-icons-fb"></Button>
                     </div>
                 </div>
                 <div className="feedback col-4">
-                    <div className="contact-header">Напишите нам</div>
+                    <div className="contact-header">{t("writeToUs")}</div>
                     <Form>
                         <FormGroup>
-                            <Label for="examplePassword">Имя</Label>
+                            <Label for="examplePassword">{t("name")}</Label>
                             <Input 
                                 type="name" 
                                 name="name" 
@@ -94,7 +77,7 @@ const Contacts = () => {
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for="examplePassword">Тема</Label>
+                            <Label for="examplePassword">{t("themeOfMsg")}</Label>
                             <Input 
                                 type="name" 
                                 name="name" 
@@ -105,7 +88,7 @@ const Contacts = () => {
                         </FormGroup>
 
                         <FormGroup>
-                            <Label for="exampleText">Ваше сообщение</Label>
+                            <Label for="exampleText">{t("yourMsg")}</Label>
                             <Input 
                                 type="textarea" 
                                 name="text" 
@@ -115,7 +98,7 @@ const Contacts = () => {
                         </FormGroup>
 
                         <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
-                            <span>Отправить</span>
+                            <span>{t("submit")}</span>
                         </Button>
                     </Form>
                 </div>

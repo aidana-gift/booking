@@ -10,11 +10,14 @@ import {
 } from 'reactstrap';
 import dateformat from 'dateformat';
 import './book-info.css';
+import { useTranslation } from 'react-i18next';
 
 const Aside = (props) => {
     const [dateFrom, setDateFrom] = useState("")
     const [dateTo, setDateTo] = useState("")
     const [room, setRoom] = useState("")
+    const { t } = useTranslation();
+
     //const [roomName, setRoomName] = useState("")
    let checkin = new Date(dateFrom);
    let checkout = new Date(dateTo)
@@ -34,36 +37,36 @@ const Aside = (props) => {
                 <CardBody>
                     <div className="top-info">
                         <div className="reserv-aside">
-                            <CardTitle className="checks">Прибытие</CardTitle>
+                            <CardTitle className="checks">{t("checkin")}</CardTitle>
                             <CardSubtitle className="reserv-date">{dateFrom}</CardSubtitle>
-                            <CardText className="checks">от 12:00</CardText>
+                            <CardText className="checks">{t("from12")}</CardText>
                         </div>
                         <div className="reserv-aside">
-                            <CardTitle className="checks">Отъезд</CardTitle>
+                            <CardTitle className="checks">{t("checkout")}</CardTitle>
                             <CardSubtitle className="reserv-date">{dateTo}</CardSubtitle>
-                            <CardText className="checks">до 12:00</CardText>
+                            <CardText className="checks">{t("to12")}</CardText>
                         </div>
                     </div>
 
                     <div className="reserv-aside">
-                            <CardTitle>Номер</CardTitle>
-                            <CardTitle>Количество</CardTitle>
-                            <CardTitle>Цена номера</CardTitle>
+                            <CardTitle>{t("room")}</CardTitle>
+                            <CardTitle>{t("quantity")}</CardTitle>
+                            <CardTitle>{t("price")}</CardTitle>
                     </div>
 
                     <div className="reserv-aside">
                             <CardTitle>{room.name}, {props.info.room.category.name}</CardTitle>
-                            <CardTitle>{diff} ночей, {props.info.room.volume.id} гостей</CardTitle>
-                            <CardTitle>{room.price} сомов</CardTitle>
+                            <CardTitle>{diff} {t("nights")}, {props.info.room.volume.volume_name} {t("guests")}</CardTitle>
+                            <CardTitle>{room.price} {t("soms")}</CardTitle>
                     </div>
 
                     <div className="final">
                         <div className="reserv-aside">
-                                <CardTitle>Итого: </CardTitle>
+                                <CardTitle>{t("total")}: </CardTitle>
                         </div>
 
                         <div className="reserv-aside">
-                                <CardTitle>{room.price} сомов</CardTitle>
+                                <CardTitle>{room.price} {t("soms")}</CardTitle>
                         </div>
                     </div>
                 </CardBody>

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import dateformat from 'dateformat';
 import { withRouter } from 'react-router-dom';
 import 'react-phone-number-input/style.css'
-import {Input as InputPhone} from 'react-phone-number-input'
 import './user-form.css';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { useTranslation } from 'react-i18next';
 import * as axios from 'axios';
 
 // axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
@@ -20,6 +20,7 @@ const FormUser = (props) => {
     const [roomName, setRoomName] = useState("")
     const [special, setSpecial] = useState("")
     const [isChecked, setIsChecked] = useState(false)
+    const { t } = useTranslation();
 
     useEffect(()=>{
         const date_from = dateformat(props.info.date_from, 'yyyy-mm-dd')
@@ -63,9 +64,9 @@ const FormUser = (props) => {
 
     return (
         <Form>
-            <Label className="form-header">Данные гостя</Label>
+            <Label className="form-header">{t("guestDetails")}</Label>
             <FormGroup>
-                <Label for="examplePassword">Имя
+                <Label for="examplePassword">{t("name")}
                     <span className="required">*</span>
                 </Label>
 
@@ -82,7 +83,7 @@ const FormUser = (props) => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="examplePassword">Фамилия
+                <Label for="examplePassword">{t("surname")}
                     <span className="required">*</span>
                 </Label>
                 <Input 
@@ -98,7 +99,7 @@ const FormUser = (props) => {
             </FormGroup>
 
             <FormGroup>
-                <Label for="examplePassword" >Номер телефона
+                <Label for="examplePassword" >{t("phone")}
                     <span className="required">*</span>
                 </Label>
                 <Input
@@ -132,13 +133,13 @@ const FormUser = (props) => {
             <FormGroup check>
                 <Label check>
                     <Input type="checkbox" onChange={e => setIsChecked(!isChecked)}/>
-                        Со мной будут дети
+                        {t("hasChild")}
                 </Label>
             </FormGroup>
-            <Label className="form-header">Дополнительная информация</Label>
+            <Label className="form-header">{t("extraInfo")}</Label>
 
             <FormGroup>
-                <Label for="exampleText">Special requests</Label>
+                <Label for="exampleText">{t("specialReq")}</Label>
                 <Input 
                     type="textarea" 
                     name="text" 
@@ -150,7 +151,7 @@ const FormUser = (props) => {
             </FormGroup>
 
             <Button outline color="info" className="search-btn" type="button" onClick={handleClick}>
-              <span>Отправить</span>
+              <span>{t("submit")}</span>
             </Button>
 
         </Form>

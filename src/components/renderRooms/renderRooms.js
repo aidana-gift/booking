@@ -59,7 +59,7 @@ useEffect(()=>{
         state.map(el => {
           console.log(el)
           if(capacity){
-            if(item.room != el.name && capacity == el.volume.id){
+            if(item.room != el.name && capacity == el.volume.volume_name){
               roomMap.length = 0
               roomMap.push(el);
             }
@@ -79,7 +79,7 @@ useEffect(()=>{
     }
     else{
       state.map(el => {
-        if(capacity == el.volume.id)
+        if(capacity == el.volume.volume_name)
         roomMap.push(el);
       })
     }

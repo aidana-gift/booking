@@ -33,7 +33,7 @@ console.log(props);
         <div className="row">
           {state.map((item) => 
         <div key={item.id} className="col-3">
-               <Card className="card-item" className="card-font">
+               <Card className="card-item">
                <CardImg src={item.images[0]} alt="Card image cap" className="card-img"/>
                    <CardBody>
                        <CardTitle>{item.name}</CardTitle>

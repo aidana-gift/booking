@@ -34,7 +34,7 @@ const App = (props) => {
             <Route exact path={'/results'} 
                   render={() => <Results 
                          />} />
-            <Route component={NoMatch} />
+            {/* <Route component={NoMatch} /> */}
 
           </Switch>
         </div>

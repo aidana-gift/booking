@@ -58,7 +58,7 @@ const Contacts = () => {
                                 type="name" 
                                 name="name" 
                                 id="exampleName" 
-                                placeholder="Имя" 
+                                placeholder={t("name")}
                                 value={name}
                                 onChange={e => setName(e.target.value)}/>
                         </FormGroup>
@@ -82,7 +82,7 @@ const Contacts = () => {
                                 type="name" 
                                 name="name" 
                                 id="exampleName" 
-                                placeholder="Тема" 
+                                placeholder={t("themeOfMsg")}
                                 value={subject}
                                 onChange={e => setSubject(e.target.value)}/>
                         </FormGroup>

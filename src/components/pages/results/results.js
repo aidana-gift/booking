@@ -1,18 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import CardItem from '../../card/card';
+import React from 'react';
 import Filter from '../../filter/filter';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
 import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import RenderRooms from '../../renderRooms/renderRooms';
+import { useTranslation } from 'react-i18next';
 
 const Results = (props) => {
-  console.log(props)
+  const { t } = useTranslation();
   return (
       <div className="container">
         <ScrollToTopControlller />
           <Filter/>
-          <h3 className="card-label">Результаты поиска</h3>
+          <h3 className="card-label">{t("results")}</h3>
         <RenderRooms />
       </div>
   );

@@ -30,8 +30,17 @@
     height: 50px;
 }
 
-@media (max-width: 900px){
-  .filter {
-    display: block; 
+/* @media (max-width: 900px){
+    .filter {
+    display: block;
+    margin-top: 0.2em;
     }
-}
+    .filter-item{
+        float: left;
+        margin-bottom: 1em;
+    }
+    .search-btn{
+        align-content: center;
+        justify-content: center;
+    }
+} */

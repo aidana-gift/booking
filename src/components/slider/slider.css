@@ -4,6 +4,7 @@
       box-sizing: border-box;
       box-shadow: 100px 2px 100px black;
       z-index: -1;
+      height: 600px;
 }
 
 .custom-tag > img { 

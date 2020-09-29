@@ -28,7 +28,7 @@ const CardItem = (props) => {
 
 console.log(props);
   return (
-    <div className="cards" className="container">
+    <div className="cards container">
       <div>
         <div className="row">
           {state.map((item) => 

@@ -7,7 +7,6 @@ import Room from '../pages/room/room1/room1';
 import Booking from '../pages/booking/booking';
 import Results from '../pages/results/results';
 import Footer from '../footer/footer';
-import NoMatch from '../pages/noMatch/noMatch';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './app.css';
 

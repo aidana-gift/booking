@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Slider from '../../slider/slider';
-import CardItem from '../../card/card';
 import Filter from '../../filter/filter';
-import axios from 'axios';
 import ScrollToTopControlller from '../../sroll-to-top/scroll-to-top';
 import RenderRooms from '../../renderRooms/renderRooms';
 import { useTranslation } from 'react-i18next';

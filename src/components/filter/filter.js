@@ -18,7 +18,7 @@ const Filter = (props) => {
     e.preventDefault();
     
      if((startDate && endDate)){
-       if(props.location.pathname != "/results"){
+       if(props.location.pathname !== "/results"){
         props.history.push({
           pathname: '/results',
           state: { date_from: dateformat(startDate, 'yyyy-mm-dd'),
